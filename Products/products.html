@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="products.css">
 </head>
-
 <body>
     <!-- Header -->
     <header class="header">
@@ -22,17 +20,14 @@
                 <a href="#trips">Trips</a>
             </nav>
             <div class="icons">
-                <div class="fas fa-search" id="search-btn"></div>
                 <div class="fas fa-shopping-cart" id="cart-btn"></div>
                 <div class="fas fa-user" id="login-btn"></div>
+                <div class="fas fa-moon" id="dark-mode-toggle"></div>
             </div>
-            <form class="search-form">
-                <input type="search" id="search-box" placeholder="Search here...">
-                <label for="search-box" class="fas fa-search"></label>
-            </form>
         </div>
     </header>
-
+    
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Discover Islamic Essentials</h1>
@@ -41,82 +36,30 @@
         </div>
     </section>
 
+    <!-- Products Section -->
     <section class="products" id="products">
         <h1>Our Products</h1>
-        <div class="product-container">
-            <div class="product" data-category="quran">
-                <img src="/images/Products-imgs/quraan.png" Qur'an Copy">
-                <h3>Qur'an Copy</h3>
-                <p>$15</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product" data-category="carpet">
-                <img src="/images/Products-imgs/prayer-carpet.png" alt="Prayer Carpet">
-                <h3>Prayer Carpet</h3>
-                <p>$25</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product" data-category="books">
-                <img src="/images/Products-imgs/islamic-book.png" alt="Islamic Book">
-                <h3>Islamic Book</h3>
-                <p>$10</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product" data-category="books">
-                <img src="/images/Products-imgs/islamic-book.png" alt="Islamic Book">
-                <h3>Islamic Book</h3>
-                <p>$10</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product" data-category="books">
-                <img src="/images/Products-imgs/islamic-book.png" alt="Islamic Book">
-                <h3>Islamic Book</h3>
-                <p>$10</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product" data-category="books">
-                <img src="/images/Products-imgs/islamic-book.png" alt="Islamic Book">
-                <h3>Islamic Book</h3>
-                <p>$10</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product" data-category="books">
-                <img src="/images/Products-imgs/islamic-book.png" alt="Islamic Book">
-                <h3>Islamic Book</h3>
-                <p>$10</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product" data-category="books">
-                <img src="/images/Products-imgs/islamic-book.png" alt="Islamic Book">
-                <h3>Islamic Book</h3>
-                <p>$10</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product" data-category="books">
-                <img src="/images/Products-imgs/islamic-book.png" alt="Islamic Book">
-                <h3>Islamic Book</h3>
-                <p>$10</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product" data-category="books">
-                <img src="/images/Products-imgs/islamic-book.png" alt="Islamic Book">
-                <h3>Islamic Book</h3>
-                <p>$10</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product" data-category="books">
-                <img src="/images/Products-imgs/islamic-book.png" alt="Islamic Book">
-                <h3>Islamic Book</h3>
-                <p>$10</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product" data-category="books">
-                <img src="/images/Products-imgs/islamic-book.png" alt="Islamic Book">
-                <h3>Islamic Book</h3>
-                <p>$10</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
+
+        <!-- Search, Filter & Sorting Inside Products Section -->
+        <div class="filter-container">
+            <input type="search" id="search-box" placeholder="Search products..." class="search-bar">
+            <select id="category-filter">
+                <option value="all">All Categories</option>
+                <option value="quran">Qur'an</option>
+                <option value="prayer-mats">Prayer Mats</option>
+                <option value="books">Books</option>
+                <option value="accessories">Accessories</option>
+            </select>
+            <select id="sort-products">
+                <option value="default">Sort By</option>
+                <option value="name">Name</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+            </select>
         </div>
+
+        <!-- Product List -->
+        <div class="product-container" id="product-list"></div>
     </section>
 
     <!-- Footer -->
@@ -154,21 +97,7 @@
             </div>
         </div>
     </footer>
-    <!-- Login Popup -->
-    <div class="popup" id="login-popup">
-        <div class="popup-content">
-            <span class="close-btn">&times;</span>
-            <h2>Login</h2>
-            <form id="login-form">
-                <input type="email" id="email" placeholder="Enter your email" required>
-                <input type="password" id="password" placeholder="Enter your password" required>
-                <button type="submit">Login</button>
-                <p>Don't have an account? <a href="#" id="switch-to-signup">Sign up</a></p>
-            </form>
-        </div>
-    </div>
 
     <script src="products.js"></script>
 </body>
-
 </html>

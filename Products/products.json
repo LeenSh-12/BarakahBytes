@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Qur'an Copy",
+        "price": "$15",
+        "image": "/images/Products-imgs/quraan.png",
+        "category": "quran"
+    },
+    {
+        "name": "Prayer Carpet",
+        "price": "$25",
+        "image": "/images/Products-imgs/prayer-carpet.png",
+        "category": "carpet"
+    },
+    {
+        "name": "Islamic Book",
+        "price": "$10",
+        "image": "/images/Products-imgs/islamic-book.png",
+        "category": "books"
+    }
+]
