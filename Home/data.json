@@ -1,0 +1,20 @@
+[
+    {
+        "image": "/images/Home-imgs/Amina.png",
+        "alt": "User 1",
+        "quote": "Amazing products with deep spiritual value!",
+        "name": "Amina"
+    },
+    {
+        "image": "/images/Home-imgs/Ahmad.png",
+        "alt": "User 2",
+        "quote": "I love the digital Qur'an! Perfect for daily reading.",
+        "name": "Ahmed"
+    },
+    {
+        "image": "/images/Home-imgs/Amina.png",
+        "alt": "User 3",
+        "quote": "The service is excellent, and the products are top-notch.",
+        "name": "Fatima"
+    }
+]

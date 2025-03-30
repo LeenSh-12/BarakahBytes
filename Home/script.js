@@ -127,4 +127,35 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+  // Fetch the reviews from the JSON file
+  fetch('reviews.json')
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(reviews => {
+      const reviewContainer = document.getElementById('review-container');
+      
+      // Create review elements for each review in the JSON
+      reviews.forEach(review => {
+          const reviewElement = document.createElement('div');
+          reviewElement.className = 'review';
+          
+          reviewElement.innerHTML = `
+              <img src="${review.image}" alt="${review.alt}">
+              <p>"${review.quote}"</p>
+              <h4>${review.name}</h4>
+          `;
+          
+          reviewContainer.appendChild(reviewElement);
+      });
+  })
+  .catch(error => {
+      console.error('Error loading reviews:', error);
+      // You could display a fallback message here if the JSON fails to load
+      document.getElementById('review-container').innerHTML = 
+          '<p>Unable to load reviews at this time.</p>';
+  });
 });
