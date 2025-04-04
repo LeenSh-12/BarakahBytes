@@ -6,6 +6,8 @@
     <title>Islamic Product Store - Barakah Bytes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="products.css">
+  <link rel="stylesheet" href="cart.css">
+
 </head>
 <body>
     <!-- Header -->
@@ -26,6 +28,19 @@
             </div>
         </div>
     </header>
+
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+          <h2>Your Cart</h2>
+          <span id="closeCart">&times;</span>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-footer">
+          <p>Total: <span id="cartTotal">$0</span></p>
+        </div>
+      </div>
+      <div id="cartOverlay" class="cart-overlay"></div>
+      
     
     <!-- Hero Section -->
     <section class="hero">

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details</title>
+  <link rel="stylesheet" href="product-details.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="products.css">
+  <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo"><i class="fas fa-shopping-basket"></i> Barakah Bytes</a>
+      <nav class="navbar">
+        <a href="/Home/index.html">Home</a>
+        <a href="#products">Products</a>
+        <a href="#quran">Qur'an</a>
+        <a href="#tajweed">Tajweed</a>
+        <a href="#trips">Trips</a>
+      </nav>
+      <div class="icons">
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="fas fa-user" id="login-btn"></div>
+        <div class="fas fa-moon" id="dark-mode-toggle"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <span id="closeCart">&times;</span>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <p>Total: <span id="cartTotal">$0</span></p>
+      <button class="checkout-btn" onclick="goToCheckout()">Proceed to Checkout</button>
+    </div>
+  </div>
+  <div id="cartOverlay" class="cart-overlay"></div>
+
+
+  <div class="product-details-container">
+    <div class="back"><a href="products.html">&larr; Back to Products</a></div>
+    <div class="product-details" id="product-details">
+      <!-- Details will be loaded here -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h2>Barakah Bytes</h2>
+          <p>Providing high-quality digital Islamic products to inspire and enrich your faith.</p>
+        </div>
+        <div class="footer-section links">
+          <h2>Quick Links</h2>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#quran">Qur'an</a></li>
+            <li><a href="#tajweed">Tajweed</a></li>
+            <li><a href="#trips">Trips</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h2>Contact Us</h2>
+          <p>Email: support@barakahbytes.com</p>
+          <p>Phone: +123 456 7890</p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Barakah Bytes. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="cart.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get("id");
+
+
+
+    fetch("products.json")
+      .then((res) => res.json())
+      .then((products) => {
+        const product = products.find((p) => p.id === productId);
+        const container = document.getElementById("product-details");
+
+        if (product) {
+          container.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <div class="info">
+          <h1>${product.name}</h1>
+          <p class="price">${product.price}</p>
+          <p class="desc">${product.description}</p>
+          <button class="buy-btn">Add to Cart</button>
+        </div>
+      `;
+
+      document.querySelector(".buy-btn").addEventListener("click", () => {
+      addToCart({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image
+      });
+    });
+
+
+          // Recommended products
+          const recommended = document.createElement("div");
+          recommended.classList.add("recommended");
+          recommended.innerHTML = "<h2>Recommended Products</h2><div class='recommended-list'></div>";
+          document.querySelector(".product-details-container").appendChild(recommended);
+
+          const list = recommended.querySelector(".recommended-list");
+
+          // Get up to 3 similar products
+          const similarProducts = products
+            .filter(p => p.id !== product.id && p.category === product.category)
+            .slice(0, 3);
+
+          similarProducts.forEach((p) => {
+            const card = document.createElement("div");
+            card.classList.add("recommended-product");
+            card.innerHTML = `
+          <img src="${p.image}" alt="${p.name}">
+          <h3>${p.name}</h3>
+          <p>${p.price}</p>
+        `;
+            card.addEventListener("click", () => {
+              window.location.href = `product-details.html?id=${p.id}`;
+            });
+            list.appendChild(card);
+          });
+
+        } else {
+          container.innerHTML = "<p>Product not found.</p>";
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        document.getElementById("product-details").innerHTML = "<p>Error loading product.</p>";
+      });
+
+  </script>
+</body>
+
+</html>

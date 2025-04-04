@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qur'an Learning</title>
+    <link rel="stylesheet" href="products.css">
+    <style>
+        .quran-section {
+            max-width: 900px;
+            margin: 100px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .quran-section h2 {
+            text-align: center;
+            color: #28235b;
+            margin-bottom: 20px;
+        }
+
+        .dropdowns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        select {
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .verse-box {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .verse-arabic {
+            font-size: 24px;
+            text-align: right;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .verse-translation {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .tafsir,
+        .simple-meaning {
+            background: #fdf7e4;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .tafsir h4,
+        .simple-meaning h4 {
+            margin-bottom: 8px;
+            color: #a58a44;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="quran-section">
+        <h2>Qur'an Learning & Explanation</h2>
+        <div class="dropdowns">
+            <select id="surahSelect">
+                <option value="1">Surah Al-Fatiha</option>
+                <option value="2">Surah Al-Baqarah</option>
+            </select>
+            <select id="verseSelect">
+                <option value="1">Verse 1</option>
+                <option value="2">Verse 2</option>
+            </select>
+        </div>
+
+        <div class="verse-box" id="verseBox">
+            <div class="verse-arabic" id="verseArabic">...</div>
+            <div class="verse-translation" id="verseTranslation">...</div>
+            <div class="tafsir" id="verseTafsir">
+                <h4>Tafsir</h4>
+                <p>...</p>
+            </div>
+            <div class="simple-meaning" id="verseSimple">
+                <h4>In Simple Terms</h4>
+                <p>...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const data = {
+            "1": {
+                "1": {
+                    arabic: "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+                    translation: "In the name of Allah, the Most Gracious, the Most Merciful.",
+                    tafsir: "This verse is a declaration that all actions begin with Allah's name and attributes of mercy.",
+                    simple: "We begin by remembering God's kindness and mercy."
+                }
+            },
+            "2": {
+                "1": {
+                    arabic: "الم",
+                    translation: "Alif, Lam, Meem.",
+                    tafsir: "These are disjointed letters. Their meanings are known only to Allah.",
+                    simple: "Some letters in the Qur'an are mysterious and only Allah knows their true meaning."
+                },
+                "2": {
+                    arabic: "ذَٰلِكَ الْكِتَابُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ",
+                    translation: "This is the Book about which there is no doubt, a guidance for those conscious of Allah.",
+                    tafsir: "This verse emphasizes that the Qur'an is the ultimate truth and a guide for the pious.",
+                    simple: "The Qur'an is a clear guide for people who want to live rightly."
+                }
+            }
+        };
+
+        const surahSelect = document.getElementById('surahSelect');
+        const verseSelect = document.getElementById('verseSelect');
+        const verseArabic = document.getElementById('verseArabic');
+        const verseTranslation = document.getElementById('verseTranslation');
+        const verseTafsir = document.getElementById('verseTafsir').querySelector('p');
+        const verseSimple = document.getElementById('verseSimple').querySelector('p');
+
+        function updateVerse() {
+            const surah = surahSelect.value;
+            const verse = verseSelect.value;
+            const selected = data[surah]?.[verse];
+            if (selected) {
+                verseArabic.textContent = selected.arabic;
+                verseTranslation.textContent = selected.translation;
+                verseTafsir.textContent = selected.tafsir;
+                verseSimple.textContent = selected.simple;
+            } else {
+                verseArabic.textContent = "Not available.";
+                verseTranslation.textContent = "";
+                verseTafsir.textContent = "";
+                verseSimple.textContent = "";
+            }
+        }
+
+        surahSelect.addEventListener("change", updateVerse);
+        verseSelect.addEventListener("change", updateVerse);
+
+        window.addEventListener("DOMContentLoaded", updateVerse);
+    </script>
+</body>
+
+</html>

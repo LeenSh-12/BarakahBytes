@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-   
+
     const searchBox = document.querySelector("#search-box");
     const products = document.querySelectorAll(".product");
 
@@ -37,25 +37,24 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => console.error("Error loading products:", error));
 
     function renderProducts(products) {
-        productContainer.innerHTML = ""; // Clear before rendering
+        productContainer.innerHTML = "";
         products.forEach(product => {
             const productCard = document.createElement("div");
             productCard.classList.add("product");
+            productCard.setAttribute("data-id", product.id);
             productCard.setAttribute("data-category", product.category);
             productCard.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
-                <h3>${product.name}</h3>
-                <p>${product.price}</p>
-                <button class="add-to-cart" data-name="${product.name}" data-price="${product.price}">Add to Cart</button>
-            `;
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>${product.price}</p>
+                `;
+            productCard.addEventListener("click", () => {
+                window.location.href = `product-details.html?id=${product.id}`;
+            });
             productContainer.appendChild(productCard);
         });
-
-        // Attach event listeners to new buttons
-        document.querySelectorAll(".add-to-cart").forEach(button => {
-            button.addEventListener("click", addToCart);
-        });
     }
+
 
     function addToCart(event) {
         const name = event.target.dataset.name;
@@ -85,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Live Search Functionality
     searchInput.addEventListener("input", () => {
         const searchTerm = searchInput.value.toLowerCase();
-        const filteredProducts = productsData.filter(product => 
+        const filteredProducts = productsData.filter(product =>
             product.name.toLowerCase().includes(searchTerm)
         );
         renderProducts(filteredProducts);
@@ -94,8 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // Filtering by Category
     filterSelect.addEventListener("change", () => {
         const category = filterSelect.value;
-        const filteredProducts = category === "all" 
-            ? productsData 
+        const filteredProducts = category === "all"
+            ? productsData
             : productsData.filter(product => product.category === category);
         renderProducts(filteredProducts);
     });

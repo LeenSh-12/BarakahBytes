@@ -1,20 +1,98 @@
 [
     {
+        "id": "quran-copy",
         "name": "Qur'an Copy",
         "price": "$15",
-        "image": "/images/Products-imgs/quraan.png",
-        "category": "quran"
+        "image": "../images/Products-imgs/quraan.png",
+        "category": "quran",
+        "description": "A beautifully printed copy of the Holy Qur'an with elegant calligraphy and translation."
     },
     {
+        "id": "quran-premium",
+        "name": "Deluxe Qur'an Edition",
+        "price": "$35",
+        "image": "../images/Products-imgs/quraan-premium.png",
+        "category": "quran",
+        "description": "Leather-bound premium Qur'an with gold embossing and tafsir notes."
+    },
+    {
+        "id": "quran-pocket",
+        "name": "Pocket Qur'an",
+        "price": "$8",
+        "image": "../images/Products-imgs/quraan-pocket.png",
+        "category": "quran",
+        "description": "Compact and travel-friendly Qur'an edition for convenience."
+    },
+    {
+        "id": "prayer-carpet",
         "name": "Prayer Carpet",
         "price": "$25",
-        "image": "/images/Products-imgs/prayer-carpet.png",
-        "category": "carpet"
+        "image": "../images/Products-imgs/prayer-carpet.png",
+        "category": "carpet",
+        "description": "Comfortable and elegant prayer mat with soft texture and spiritual design."
     },
     {
+        "id": "prayer-carpet-premium",
+        "name": "Luxury Prayer Rug",
+        "price": "$40",
+        "image": "../images/Products-imgs/prayer-carpet-premium.png",
+        "category": "carpet",
+        "description": "High-end prayer rug with thick cushioning and intricate design."
+    },
+    {
+        "id": "misbaha-classic",
+        "name": "Classic Misbaha",
+        "price": "$12",
+        "image": "../images/Products-imgs/misbaha.png",
+        "category": "tools",
+        "description": "Elegant wooden misbaha perfect for daily remembrance."
+    },
+    {
+        "id": "islamic-book",
         "name": "Islamic Book",
         "price": "$10",
-        "image": "/images/Products-imgs/islamic-book.png",
-        "category": "books"
+        "image": "../images/Products-imgs/islamic-book.png",
+        "category": "books",
+        "description": "An insightful book covering essential teachings of Islam with modern reflections."
+    },
+    {
+        "id": "hadith-collection",
+        "name": "Hadith Collection",
+        "price": "$18",
+        "image": "../images/Products-imgs/hadith-book.png",
+        "category": "books",
+        "description": "A collection of authentic Hadiths with commentary."
+    },
+    {
+        "id": "ramadan-lanterns",
+        "name": "Ramadan Lanterns",
+        "price": "$20",
+        "image": "../images/Products-imgs/ramadan-lanterns.png",
+        "category": "ramadan",
+        "description": "Festive lanterns to light up your home during Ramadan nights."
+    },
+    {
+        "id": "ramadan-set",
+        "name": "Ramadan Decoration Set",
+        "price": "$30",
+        "image": "../images/Products-imgs/ramadan-set.png",
+        "category": "ramadan",
+        "description": "Complete Ramadan decor kit including banners, lanterns, and lights."
+    },
+    {
+        "id": "islamic-wallpaper",
+        "name": "Islamic Wallpaper Pack",
+        "price": "$5",
+        "image": "../images/Products-imgs/wallpaper-pack.png",
+        "category": "wallpapers",
+        "description": "High-quality downloadable Islamic wallpapers for phone and desktop."
+    },
+    {
+        "id": "calligraphy-art",
+        "name": "Calligraphy Artwork",
+        "price": "$50",
+        "image": "../images/Products-imgs/calligraphy-art.png",
+        "category": "artwork",
+        "description": "Framed Arabic calligraphy piece with premium finish."
     }
 ]

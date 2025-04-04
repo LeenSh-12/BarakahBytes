@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.product-details-container {
+    /* max-width: 1000px; */
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 57px;
+    margin-bottom: 57px;
+}
+
+.back {
+    margin-top: 10%;
+    margin-bottom: 20px;
+}
+
+.back a {
+    color: #a58a44;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.product-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start;
+    background: white;
+    border-radius: 10px;
+}
+
+.product-details img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.info {
+    flex: 1;
+}
+
+.info h1 {
+    color: #28235b;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #a58a44;
+}
+
+.desc {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.buy-btn {
+    background-color: #a58a44;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buy-btn:hover {
+    background-color: #28235b;
+}
+
+.recommended {
+    margin-top: 40px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.recommended h2 {
+    color: #28235b;
+    margin-bottom: 20px;
+}
+
+.recommended-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.recommended-product {
+    background: #f9f9f9;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.recommended-product:hover {
+    transform: scale(1.05);
+}
+
+.recommended-product img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info {
+        text-align: center;
+    }
+}
