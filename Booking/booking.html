@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hajj & Umrah Booking</title>
+    <link rel="stylesheet" href="../Barakah Bytes/style.css">
+    <link rel="stylesheet" href="bookingStyle.css">
+
+
+</head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <a href="#" class="logo"><i class="fas fa-shopping-basket"></i> Barakah Bytes</a>
+                <nav class="navbar">
+                    <a href="#home">Home</a>
+                    <a href="index 1.html">Products</a>
+                    <a href="#quran">Qur'an</a>
+                    <a href="#tajweed">Tajweed</a>
+                    <a href="#trips">Trips</a>
+                </nav>
+                <div class="icons">
+                    <div class="fas fa-search" id="search-btn"></div>
+                    <div class="fas fa-shopping-cart" id="cart-btn"></div>
+                    <div class="fas fa-user" id="login-btn"></div>
+                </div>
+                <form class="search-form">
+                    <input type="search" id="search-box" placeholder="Search here...">
+                    <label for="search-box" class="fas fa-search"></label>
+                </form>
+            </div>
+        </header>
+        
+        <div class="container">
+            <h2>Hajj & Umrah Booking</h2>
+        
+            <div class="field">
+                <label><input type="radio" name="pilgrimage" id="umrah" checked> Umrah</label>
+                <label><input type="radio" name="pilgrimage" id="hajj"> Hajj</label>
+            </div>
+        
+            <div class="field">
+                <label for="year">Select Year:</label>
+                <select id="year"></select>
+            </div>
+            
+            <div class="field" id="monthField">
+                <label for="month">Select Month:</label>
+                <select id="month"></select>
+            </div>
+        
+            <div class="field" id="packageField">
+                <label>Select Package:</label>
+                <div class="packages">
+                    <div class="card" onclick="selectPackage('silver')" id="silverCard">
+                        <div class="card-header silver"></div>
+                        <img src="../images/Booking-imgs/silver package.jpg" alt="Silver Package">
+                        <p>Silver (3-Star)</p>
+                    </div>
+                    <div class="card" onclick="selectPackage('gold')" id="goldCard">
+                        <div class="card-header gold"></div>
+                        <img src="../images/Booking-imgs/Gold package.jpg" alt="Gold Package">
+                        <p>Gold (4-Star)</p>
+                    </div>
+                    <div class="card" onclick="selectPackage('platinum')" id="platinumCard">
+                        <div class="card-header platinum"></div>
+                        <img src="../images/Booking-imgs/platinum-package.png" alt="Platinum Package">
+                        <p>Platinum (5-Star)</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div id="locationField" class="field">
+                <label for="location">Select Location:</label>
+                <select id="location">
+                    <option value="makkah">Makkah</option>
+                    <option value="madinah">Madinah</option>
+                    <option value="both">Makkah & Madinah</option>
+                </select>
+            </div>
+        
+            <div id="nightsField" class="field">
+                <label for="nights">Select Nights:</label>
+                <select id="nights"></select>
+            </div>
+        
+            <button id="bookNow">Book Now</button>
+        </div>
+        
+        <script src="bookingScript.js"></script>
+        <script>
+            document.getElementById('umrah').addEventListener('click', function() {
+                toggleHajjUmrah('umrah');
+            });
+        
+            document.getElementById('hajj').addEventListener('click', function() {
+                toggleHajjUmrah('hajj');
+            });
+        </script>
+
+
+    </body>
+     <!-- Footer -->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h2>Barakah Bytes</h2>
+                    <p>Providing high-quality digital Islamic products to inspire and enrich your faith.</p>
+                </div>
+                <div class="footer-section links">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#quran">Qur'an</a></li>
+                        <li><a href="#tajweed">Tajweed</a></li>
+                        <li><a href="#trips">Trips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h2>Contact Us</h2>
+                    <p>Email: support@barakahbytes.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Barakah Bytes. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</html>
