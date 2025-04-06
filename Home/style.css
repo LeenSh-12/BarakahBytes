@@ -28,7 +28,7 @@ body {
 
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     text-align: center;
 }
@@ -160,12 +160,16 @@ body {
     background: var(--secondary-color);
 }
 
-/* Products Section */
+
+    /* Products Section */
 .products {
     padding: 4rem 0;
     border: 1px solid var(--light-text-color);
     border-radius: var(--border-radius);
-    margin: 2rem 0;
+    margin: 15px;
+    background: #e4dede;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-container {
@@ -181,7 +185,18 @@ body {
     scroll-snap-type: x mandatory;
     scroll-padding: 0 2rem;
     gap: 2rem;
-   
+    margin: 15px;
+ 
+}
+
+
+.carousel::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+.carousel::-webkit-scrollbar {
+    height: 8px;
 }
 
 .product {
@@ -198,11 +213,9 @@ body {
     justify-items: center;
     justify-content: center;
     text-align: center;
+    margin: 15px;
 }
 
-.carousel::-webkit-scrollbar {
-    display: none;
-}
 
 .product:hover {
     transform: translateY(-0.5rem);
@@ -211,26 +224,26 @@ body {
 .product img {
     width: 100%;
     height: 150px;
-    max-width: 300px;
+    max-width: 500px;
     border-radius: var(--border-radius);
     object-fit: contain;
     margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 
 }
 
 .product h3 {
-    font-size: 1.5rem;
-    margin: 0 0 0.5rem 0;
-    width: 100%;
+    font-size: 1.4rem;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
 }
 
 .product p {
     font-size: 1rem;
     color: var(--light-text-color);
-    flex-grow: 1;
-    width: 100%;
-    margin: 0;
-    padding:  0 1rem;
+    margin-top: auto;
+    text-align: center;
 }
 
 .prev-btn, .next-btn {
@@ -303,20 +316,35 @@ body {
 }
 
 
+
 /* Reviews Section */
 .reviews {
     padding: 4rem 0;
     background: var(--white);
     border: 1px solid var(--light-text-color);
     border-radius: var(--border-radius);
-    margin: 2rem 0;
+    margin: 15px;
+    background: #e4dede;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .review-container {
     display: flex;
-    justify-content: center;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    flex-wrap: nowrap;
     gap: 2rem;
-    flex-wrap: wrap;
+    scroll-behavior: smooth;
+   
+}
+.review-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.review-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
 }
 
 .review {
@@ -325,8 +353,13 @@ body {
     border-radius: var(--border-radius);
     width: 300px;
     box-shadow: var(--box-shadow);
+    flex: 0 0 auto; /* Prevent shrinking */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.review:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
 .review img {
     width: 80px;
     height: 80px;
