@@ -1,23 +1,3 @@
-/* General Styles */
-:root {
-    --primary-color: #f39c12;
-    --secondary-color: #28235b;
-    --background-color: #f4f4f4;
-    --text-color: #333;
-    --light-text-color: #666;
-    --white: #fff;
-    --black: #130f40;
-    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    --border-radius: 0.5rem;
-    --transition: all 0.3s ease;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
 /* Header */
 .header {
     background: var(--white);
@@ -30,10 +10,12 @@
     z-index: 1000;
 }
 
-.header .container1 {
+.header .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;  /* center all children horizontally */
     align-items: center;
+    gap: 2rem;                 /* spacing between logo, navbar, and icons */
+    flex-wrap: wrap;           /* allows wrapping on small screens */
 }
 
 .header .logo {
@@ -108,6 +90,29 @@
 .header .search-form.active {
     display: block;
 }
+
+
+/* General Styles */
+:root {
+    --primary-color: #f39c12;
+    --secondary-color: #28235b;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --light-text-color: #666;
+    --white: #fff;
+    --black: #130f40;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    --border-radius: 0.5rem;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -125,6 +130,8 @@ body > .container {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     transition: box-shadow 0.3s ease;
+    text-align: center;
+    
 }
 
 h2 {
@@ -230,6 +237,45 @@ button:hover {
         opacity: 1;
     }
 }
+
+/* Animate select fields and radio buttons */
+.select-animated {
+    animation: fadeSlideIn 1s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .field.animate {
+    animation: fadeSlideIn 1s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  @keyframes fadeSlideIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Radio button animation on click */
+  input[type="radio"] {
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  input[type="radio"]:checked {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.3);
+  }
+  
+  /* On hover select */
+  select:hover {
+    border-color: #f39c12;
+    box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.1);
+  }
+  
+
 /* Footer */
 .footer {
     background: var(--secondary-color);
@@ -254,6 +300,7 @@ button:hover {
 .footer-section h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    color: white;
 }
 
 .footer-section ul {
@@ -274,16 +321,19 @@ button:hover {
     color: var(--primary-color);
 }
 
-.footer-sectionContact a {
-    margin-top: 15px;
-    padding-top: 15px;
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icons a {
     color: var(--white);
     font-size: 1.5rem;
     transition: var(--transition);
-    gap: 5px;
 }
 
-.footer-sectionContact a:hover {
+.social-icons a:hover {
     color: var(--primary-color);
 }
 
