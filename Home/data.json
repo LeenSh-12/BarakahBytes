@@ -12,9 +12,53 @@
         "name": "Ahmed"
     },
     {
-        "image": "/images/Home-imgs/Amina.png",
+        "image": "/images/Home-imgs/fatima.png",
         "alt": "User 3",
         "quote": "The service is excellent, and the products are top-notch.",
         "name": "Fatima"
+    },
+    {
+        "image": "",
+        "alt": "User 4",
+        "quote": "The Tajweed course has really improved my recitation. Highly recommended!",
+        "name": "Samir"
+    },
+    {
+        "image": "",
+        "alt": "User 5",
+        "quote": "Booking my Umrah trip was smooth and spiritually fulfilling. جزاكم الله خيرًا",
+        "name": "Yasmeen"
+    },
+    {
+        "image": "",
+        "alt": "User 6",
+        "quote": "The explanation of each Ayah helped me understand the Qur'an on a deeper level.",
+        "name": "Omar"
+    },
+    {
+        "image": "",
+        "alt": "User 7",
+        "quote": "دروس التجويد كانت مفيدة جداً وسهلة الفهم. الله يجزيكم الخير",
+        "name": "Layla"
+    },
+    {
+        "image": "/images/Home-imgs/Khaled.png",
+        "alt": "User 8",
+        "quote": "I finally understood the meaning behind many Ayat thanks to the tafsir section.",
+        "name": "Khaled"
+    },
+    {
+        "image": "/images/Home-imgs/Zahra.png",
+        "alt": "User 9",
+        "quote": "الحمد لله، وجدت كل ما أحتاجه لتقوية علاقتي بالقرآن في هذا الموقع.",
+        "name": "Zahra"
+    },
+    {
+        "image": "",
+        "alt": "User 10",
+        "quote": "Everything from digital books to Hajj preparation guides is so well organized.",
+        "name": "Hasan"
     }
+
+
 ]
