@@ -23,7 +23,13 @@
             <div class="icons">
                 <div class="fas fa-search" id="search-btn"></div>
                 <div class="fas fa-shopping-cart" id="cart-btn"></div>
-                <div class="fas fa-user" id="login-btn"></div>
+                <div class="user-menu-container">
+                    <div class="fas fa-user" id="login-btn"></div>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="/Home/login.html" class="dropdown-item">Login</a>
+                        <a href="#" class="dropdown-item">Logout</a>
+                    </div>
+                </div>
             </div>
             <form class="search-form">
                 <input type="search" id="search-box" placeholder="Search here...">
@@ -137,6 +143,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>
