@@ -31,15 +31,17 @@
         </div>
     </header>
 
-<!-- Header -->
 <section class="section">
     <div class="container">
+      <br>
+      <br>
       <h1 class="logo1">Tajweed Treasures</h1>
       <nav class="nav">
         <a href="#resources" class="nav-link">Resources</a>
         <a href="#membership" class="nav-link">Membership</a>
         <a href="#blog" class="nav-link">Blog</a>
         <a href="#newsletter" class="nav-link">Newsletter</a>
+        <a href="#" class="nav-link">Tajweed Club</a>
       </nav>
     </div>
 </section>
@@ -54,20 +56,26 @@
   <section id="resources" class="section">
     <h3 class="section-title">Free Tajweed Resources</h3>
     <div class="card-grid">
-      <div class="card">
-        <h4 class="card-title">Makhārij Matching Game</h4>
-        <p class="card-text">A printable game to teach children the points of articulation.</p>
-      </div>
-      <div class="card">
-        <h4 class="card-title">Tajweed Worksheets</h4>
-        <p class="card-text">Interactive worksheets covering basic to advanced Tajweed rules.</p>
-      </div>
-      <div class="card">
-        <h4 class="card-title">Flashcards for Practice</h4>
-        <p class="card-text">Color-coded cards to help memorize Tajweed rules easily.</p>
-      </div>
+      <a href="Mkharij.html" class="card-link">
+        <div class="card">
+          <h4 class="card-title">Makhārij Matching Game</h4>
+          <p class="card-text">A printable game to teach children the points of articulation.</p>
+        </div>
+      </a>
+      <a href="tajweed-worksheets.html" class="card-link">
+        <div class="card">
+          <h4 class="card-title">Tajweed Worksheets</h4>
+          <p class="card-text">Interactive worksheets covering basic to advanced Tajweed rules.</p>
+        </div>
+      </a>
+      <a href="flashcards.html" class="card-link">
+        <div class="card">
+          <h4 class="card-title">Flashcards for Practice</h4>
+          <p class="card-text">Color-coded cards to help memorize Tajweed rules easily.</p>
+        </div>
+      </a>
     </div>
-  </section>
+</section>
 
   <!-- Membership Section -->
   <section id="membership" class="section bg-accent">
@@ -100,7 +108,7 @@
       <p class="text">Sign up to receive free tips, printables, and exclusive content.</p>
       <form class="form">
         <input type="email" placeholder="Your email address" class="input">
-        <button class="btn">Subscribe</button>
+        <button class="btn">Receive Notification</button>
       </form>
     </div>
   </section>
@@ -142,5 +150,37 @@
             </div>
         </div>
     </footer>
+  
+<div class="membership-popup" id="membershipPopup">
+  <div class="popup-content">
+    <span class="close-btn">&times;</span>
+    <h2>Unlock Tajweed Club</h2>
+    <p>Join our membership to access exclusive content and resources.</p>
+    <div class="membership-options">
+      <div class="option" data-plan="monthly">
+        <h3>Monthly</h3>
+        <p class="price">$9.99/month</p>
+        <button class="btn select-btn">Select</button>
+      </div>
+      <div class="option" data-plan="yearly">
+        <h3>Yearly</h3>
+        <p class="price">$99.99/year</p>
+        <p class="saving">Save 20%</p>
+        <button class="btn select-btn">Select</button>
+      </div>
+    </div>
+    <div class="payment-form" id="paymentForm">
+      <h3>Payment Information</h3>
+      <form id="membershipForm">
+        <input type="text" placeholder="Card Number" required>
+        <input type="text" placeholder="Expiration Date" required>
+        <input type="text" placeholder="CVV" required>
+        <input type="text" placeholder="Name on Card" required>
+        <button type="submit" class="btn">Complete Payment</button>
+      </form>
+    </div>
+  </div>
+</div>
+    <script src="tajweed.js"></script>
 </body>
 </html>

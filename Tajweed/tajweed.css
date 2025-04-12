@@ -219,14 +219,17 @@ body {
   
   /* Hero Section */
   .hero {
-    background: white;
+    background: wheat;
     padding: 5rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
   .hero-title {
     font-size: 2.25rem;
     color: var(--primary-color);
     transition: color 0.3s;
+    text-align: center;
   }
   
   .hero-title:hover {
@@ -237,6 +240,8 @@ body {
     margin-top: 1rem;
     color: #4b5563;
     font-size: 1.125rem;
+    text-align: center;
+  
   }
   
   /* Section */
@@ -246,8 +251,10 @@ body {
   
   .section-title {
     font-size: 2rem;
-    color:var(--primary-color);
+    color:var(--secondary-color);
     margin-bottom: 2rem;
+  
+    text-align: center;
   }
   
   /* Cards */
@@ -258,7 +265,7 @@ body {
   }
   
   .card {
-    background-color: white;
+    background-color: wheat;
     padding: 1.5rem;
     border-radius: 1rem;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -280,6 +287,9 @@ body {
     color: #6b7280;
     font-size: 0.875rem;
   }
+  .card-link{
+    text-decoration: none;
+  }
   
   /* Buttons */
   .btn {
@@ -291,6 +301,7 @@ body {
     transition: background-color 0.3s, transform 0.2s;
     border: none;
     cursor: pointer;
+    margin-top: 10Px;
   }
   
   .btn:hover {
@@ -326,16 +337,12 @@ body {
     padding-left: 1.5rem;
     padding: 1rem;
     margin-bottom: 1rem;
-    background: #f0fdf4;
+    background:wheat;
     border-radius: 0.5rem;
     transition: background 0.3s;
   }
   
-  .blog-item:hover {
-    background: var(--light-text-color);
 
-  }
-  
   .blog-title {
     color: var(--primary-color);
     font-size: 1.25rem;
@@ -349,8 +356,551 @@ body {
   }
   
   .blog-text {
-    color: var(--white);
+    color: var(--light-text-color);
     font-size: 0.875rem;
     margin-top: 0.5rem;
   }
+ 
+/* Style for the Tajweed Treasures section */
+.section {
+  background-color: var(--white);
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--secondary-color);
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.logo1:hover {
+  color: var(--primary-color);
+  transform: scale(1.02);
+}
+
+.logo1::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background: var(--primary-color);
+  bottom: -5px;
+  left: 25%;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.logo1:hover::after {
+  transform: scaleX(1);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+.nav-link {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Special style for Tajweed Club link */
+.nav-link[href="#"] {
+  background-color: rgba(243, 156, 18, 0.1);
+  padding: 0.5rem 1.5rem 0.5rem 1rem;
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+}
+
+.nav-link[href="#"]:hover {
+  background-color: rgba(243, 156, 18, 0.2);
+}
+
+.nav-link[href="#"]::before {
+  content: '\f023';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  margin-right: 0.5rem;
+  font-size: 0.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section .container {
+    gap: 1rem;
+  }
   
+  .logo1 {
+    font-size: 2rem;
+  }
+  
+  .nav {
+    gap: 0.8rem;
+  }
+  
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.3rem 0;
+  }
+  
+  .nav-link[href="#"] {
+    padding: 0.3rem 1rem 0.3rem 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    gap: 0.5rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+  }
+}
+
+/* Membership Lock Icon */
+.nav-link[href="#"] {
+  position: relative;
+  padding-right: 25px;
+}
+
+.nav-link[href="#"]::after {
+  content: '\f023';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8em;
+}
+
+/* Membership Popup */
+.membership-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: var(--box-shadow);
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--light-text-color);
+}
+
+.membership-options {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.option {
+  flex: 1;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.option:hover {
+  border-color: var(--primary-color);
+}
+
+.option.selected {
+  border-color: var(--primary-color);
+  background-color: #f9f9f9;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0.5rem 0;
+}
+
+.saving {
+  color: #4CAF50;
+  font-size: 0.8rem;
+  margin: 0.5rem 0;
+}
+
+.payment-form {
+  display: none;
+  margin-top: 1rem;
+}
+
+.payment-form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .membership-options {
+    flex-direction: column;
+  }
+  }
+
+ 
+/* Base Styles */
+.makharij-section {
+  font-family: 'Poppins', 'Arial', sans-serif;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  background: wheat;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eee5d4;
+  position: relative;
+  overflow: hidden;
+}
+
+.makharij-content {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Typography */
+.makharij-title {
+  color: var(--secondary-color);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+}
+
+.makharij-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+.makharij-text {
+  color: #4a5568;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.makharij-download-text {
+  color: #2a4365;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 2rem 0 1.5rem;
+}
+
+/* Button Styling */
+.download-button {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.BTN {
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #f39c12 0%, #f39c14 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(166, 124, 82, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.BTN:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(166, 124, 82, 0.3);
+  background: linear-gradient(135deg, #a67c52 0%, #f39c12 100%);
+}
+
+/* Image Styling */
+.makharij-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.makharij-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+  border: 1px solid #e2d5c3;
+}
+
+.makharij-image img:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .makharij-section {
+      flex-direction: column;
+      padding: 1.5rem;
+  }
+  
+  .makharij-title {
+      font-size: 2rem;
+  }
+  
+  .BTN {
+      padding: 12px 24px;
+  }
+}
+
+/* Islamic Decorative Elements */
+.makharij-section::after {
+  content: "﷽";
+  font-family: 'Traditional Arabic', 'Arial', sans-serif;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: rgba(198, 156, 109, 0.1);
+  z-index: 1;
+}
+
+
+
+ /* Base Styles */
+ .alternating-sections {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-family: 'Poppins', 'Arial', sans-serif;
+  color: #2a4365;
+}
+
+.alternating-sections h3 {
+  color: #c69c6d;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.alternating-sections h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  position: relative;
+  color: #2a4365;
+}
+
+.alternating-sections h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: #c69c6d;
+  border-radius: 2px;
+}
+
+.alternating-sections > p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  color: #4a5568;
+  max-width: 800px;
+}
+
+/* Section Items */
+.section-item {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 5rem;
+  background: wheat;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.section-item:hover {
+  transform: translateY(-5px);
+}
+
+.image-container {
+  flex: 1;
+  min-width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--white);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+.content-container {
+  flex: 1;
+  min-width: 300px;
+}
+
+.content-container h2 {
+  color: #2a4365;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.content-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: #c69c6d;
+}
+
+.content-container p {
+  color: #4a5568;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* Reverse layout for alternate sections */
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Decorative Elements */
+.section-item:nth-child(odd) .content-container::before {
+  content: "﷽";
+  font-family: 'Traditional Arabic', 'Arial', sans-serif;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 3rem;
+  color: rgba(198, 156, 109, 0.1);
+  z-index: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .alternating-sections {
+    padding: 1.5rem 1rem;
+  }
+  
+  .alternating-sections h1 {
+    font-size: 2rem;
+  }
+  
+  .section-item,
+  .reverse {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+  
+  .image-container,
+  .content-container {
+    min-width: 100%;
+  }
+  
+  .content-container h2 {
+    font-size: 1.5rem;
+  }
+}
