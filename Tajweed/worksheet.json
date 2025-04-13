@@ -2,68 +2,64 @@
     {
       "image": "/images/Worksheet-imgs/Tajweed_bundle_1.png",
       "title": "The Quran Bundle",
-      "description": "Make your little ones Quran journey memorable and fun!",
-      "price": "$29.99"
+      "description": "Make your little ones Quran journey memorable and fun!"
+      
     },
     {
       "image": "/images/Worksheet-imgs/Quran_Bundle_3.jpg",
       "title": "The Tajweed Bundle",
-      "description": "Make tajweed lessons fun and engaging with these hands-on tajweed resources!!!",
-      "price": "$22.99"
+      "description": "Make tajweed lessons fun and engaging with these hands-on tajweed resources!!!"
+    
     },
     {
       "image": "/images/Worksheet-imgs/The_Arabic_Alphabet_For_Kids_1.png",
       "title": "The Arabic Alphabet for Kids",
-      "description": "It is time to learn the Arabic alphabet with the makharij!",
-      "price": "$5.99"
+      "description": "It is time to learn the Arabic alphabet with the makharij!"
     },
     {
       "image": "/images/Worksheet-imgs/bundle.png",
       "title": "The Tajweed Workbook",
-      "description": "Make tajweed lessons fun and engaging with the ultimate tajweed workbook!!!",
-      "price": "$16.99"
+      "description": "Make tajweed lessons fun and engaging with the ultimate tajweed workbook!!!"
     },
     {
       "image": "/images/Worksheet-imgs/Connect_The_Dots_Arabic_5.jpg",
       "title": "Connect the Dots Arabic",
-      "description": "Making Arabic Learning Fun!",
-      "price": "$3.49"
+      "description": "Making Arabic Learning Fun!"
+     
     },
     {
         "image": "/images/Worksheet-imgs/The_Arabic_Short_Vowels_1.jpg",
         "title": "The Arabic Short Vowels",
-        "description": "Help your little one start their Arabic Reading journey with this hands-on and engaging short vowel workbook",
-        "price": "$3.99"
+        "description": "Help your little one start their Arabic Reading journey with this hands-on and engaging short vowel workbook"
+       
       },
       {
         "image": "/images/Worksheet-imgs/Sukoon,_Madd_Letters_And_Leen_1.png",
         "title": "Sukoon, Madd Letters and Leen",
-        "description": "You might be wondering how can you make their Quran journey a memorable one to help them connect with the Quran.",
-        "price": "$3.99"
+        "description": "You might be wondering how can you make their Quran journey a memorable one to help them connect with the Quran."
+        
       },
       {
         "image": "/images/Worksheet-imgs/Tanween,_Shadda_And_Hamza_1.jpg",
         "title": "Tanween, Shadda and Hamza",
-        "description": "Accelerate your little ones Quran reading journey!",
-        "price": "$3.99"
+        "description": "Accelerate your little ones Quran reading journey!"
+        
       },
       {
         "image": "/images/Worksheet-imgs/Juz_Amma_Surah_series_5.png",
         "title": "Surah Series Tajweed Pack",
-        "description": "Help your little ones recite surahs in the Quran with tajweed using engaging and fun resources!!!",
-        "price": "$7.49"
+        "description": "Help your little ones recite surahs in the Quran with tajweed using engaging and fun resources!!!"
       },
       {
         "image": "/images/Worksheet-imgs/Madd_Letters.png",
         "title": "Madd ul Asli Wheels - A Madd Letter Game",
-        "description": "A tajweed game for kids with madd ul asli wheels that will bring the family together to have fun and learn the rules!",
-        "price": "$4.49"
+        "description": "A tajweed game for kids with madd ul asli wheels that will bring the family together to have fun and learn the rules!"
       },
       {
         "image": "/images/Worksheet-imgs/Arabic+alphabet+bingo.png",
         "title": "Arabic Letters Bingo Game",
-        "description": "An interactive Arabic alphabet bingo game for children with fatha, kasra and damma that will make learning the Arabic letters fun!",
-        "price": "$5.49"
+        "description": "An interactive Arabic alphabet bingo game for children with fatha, kasra and damma that will make learning the Arabic letters fun!"
+       
       }
 
   ]

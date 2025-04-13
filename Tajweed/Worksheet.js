@@ -28,9 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="card-content">
                         <h3 class="card-title">${item.title}</h3>
                         <p class="card-description">${item.description}</p>
-                        <span class="card-price">${item.price}</span>
                         <button class="card-button" data-id="${item.id || item.title.toLowerCase().replace(/ /g, '-')}">
-                            <i class="fas fa-cart-plus"></i> Add to Cart
+                            Download Here!
                         </button>
                     </div>
                 `;
@@ -58,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cart functionality
     function addToCart(itemId) {
-        console.log(`Added item ${itemId} to cart`);
+        console.log(`Add item ${itemId} to cart`);
         // Add your cart logic here
         // Example: 
         // const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -68,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show feedback
         const feedback = document.createElement('div');
         feedback.className = 'cart-feedback';
-        feedback.innerHTML = `<i class="fas fa-check"></i> Added to cart!`;
+        feedback.innerHTML = `<i class="fas fa-check"></i> Downloaded!`;
         document.body.appendChild(feedback);
         
         setTimeout(() => {
