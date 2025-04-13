@@ -360,8 +360,7 @@ body {
     font-size: 0.875rem;
     margin-top: 0.5rem;
   }
- 
-/* Style for the Tajweed Treasures section */
+  /* Style for the Tajweed Treasures section */
 .section {
   background-color: var(--white);
   padding: 20px 0;
@@ -447,7 +446,7 @@ body {
   width: 100%;
 }
 
-/* Special style for Tajweed Club link */
+/* Special style for Tajweed Club link 
 .nav-link[href="#"] {
   background-color: rgba(243, 156, 18, 0.1);
   padding: 0.5rem 1.5rem 0.5rem 1rem;
@@ -465,7 +464,7 @@ body {
   font-weight: 900;
   margin-right: 0.5rem;
   font-size: 0.9em;
-}
+}*/
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -501,7 +500,7 @@ body {
   }
 }
 
-/* Membership Lock Icon */
+/* Membership Lock Icon 
 .nav-link[href="#"] {
   position: relative;
   padding-right: 25px;
@@ -516,7 +515,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   font-size: 0.8em;
-}
+}  */
 
 /* Membership Popup */
 .membership-popup {
@@ -610,297 +609,3 @@ body {
   }
 
  
-/* Base Styles */
-.makharij-section {
-  font-family: 'Poppins', 'Arial', sans-serif;
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  align-items: center;
-  background: wheat;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  border: 1px solid #eee5d4;
-  position: relative;
-  overflow: hidden;
-}
-
-.makharij-content {
-  flex: 1;
-  min-width: 300px;
-  position: relative;
-  z-index: 2;
-}
-
-/* Typography */
-.makharij-title {
-  color: var(--secondary-color);
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  position: relative;
-  display: inline-block;
-}
-
-.makharij-title::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background: var(--primary-color);
-  border-radius: 2px;
-}
-
-.makharij-text {
-  color: #4a5568;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-}
-
-.makharij-download-text {
-  color: #2a4365;
-  font-weight: 600;
-  font-size: 1.2rem;
-  margin: 2rem 0 1.5rem;
-}
-
-/* Button Styling */
-.download-button {
-  display: inline-block;
-  text-decoration: none;
-}
-
-.BTN {
-  padding: 14px 28px;
-  background: linear-gradient(135deg, #f39c12 0%, #f39c14 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(166, 124, 82, 0.2);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.BTN:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(166, 124, 82, 0.3);
-  background: linear-gradient(135deg, #a67c52 0%, #f39c12 100%);
-}
-
-/* Image Styling */
-.makharij-image {
-  flex: 1;
-  min-width: 300px;
-  text-align: center;
-  position: relative;
-}
-
-.makharij-image img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.4s ease;
-  border: 1px solid #e2d5c3;
-}
-
-.makharij-image img:hover {
-  transform: scale(1.03);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .makharij-section {
-      flex-direction: column;
-      padding: 1.5rem;
-  }
-  
-  .makharij-title {
-      font-size: 2rem;
-  }
-  
-  .BTN {
-      padding: 12px 24px;
-  }
-}
-
-/* Islamic Decorative Elements */
-.makharij-section::after {
-  content: "﷽";
-  font-family: 'Traditional Arabic', 'Arial', sans-serif;
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  font-size: 2rem;
-  color: rgba(198, 156, 109, 0.1);
-  z-index: 1;
-}
-
-
-
- /* Base Styles */
- .alternating-sections {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-  font-family: 'Poppins', 'Arial', sans-serif;
-  color: #2a4365;
-}
-
-.alternating-sections h3 {
-  color: #c69c6d;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 0.5rem;
-}
-
-.alternating-sections h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  line-height: 1.3;
-  position: relative;
-  color: #2a4365;
-}
-
-.alternating-sections h1::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 80px;
-  height: 4px;
-  background: #c69c6d;
-  border-radius: 2px;
-}
-
-.alternating-sections > p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 3rem;
-  color: #4a5568;
-  max-width: 800px;
-}
-
-/* Section Items */
-.section-item {
-  display: flex;
-  align-items: center;
-  gap: 4rem;
-  margin-bottom: 5rem;
-  background: wheat;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-}
-
-.section-item:hover {
-  transform: translateY(-5px);
-}
-
-.image-container {
-  flex: 1;
-  min-width: 300px;
-  border-radius: 8px;
-  overflow: hidden;
-  background: var(--white);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.image-container img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.5s ease;
-}
-
-.image-container:hover img {
-  transform: scale(1.05);
-}
-
-.content-container {
-  flex: 1;
-  min-width: 300px;
-}
-
-.content-container h2 {
-  color: #2a4365;
-  font-size: 1.8rem;
-  margin-bottom: 1.2rem;
-  position: relative;
-  padding-bottom: 10px;
-}
-
-.content-container h2::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 50px;
-  height: 3px;
-  background: #c69c6d;
-}
-
-.content-container p {
-  color: #4a5568;
-  line-height: 1.8;
-  font-size: 1.1rem;
-}
-
-/* Reverse layout for alternate sections */
-.reverse {
-  flex-direction: row-reverse;
-}
-
-/* Decorative Elements */
-.section-item:nth-child(odd) .content-container::before {
-  content: "﷽";
-  font-family: 'Traditional Arabic', 'Arial', sans-serif;
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  font-size: 3rem;
-  color: rgba(198, 156, 109, 0.1);
-  z-index: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .alternating-sections {
-    padding: 1.5rem 1rem;
-  }
-  
-  .alternating-sections h1 {
-    font-size: 2rem;
-  }
-  
-  .section-item,
-  .reverse {
-    flex-direction: column;
-    gap: 2rem;
-    padding: 1.5rem;
-  }
-  
-  .image-container,
-  .content-container {
-    min-width: 100%;
-  }
-  
-  .content-container h2 {
-    font-size: 1.5rem;
-  }
-}

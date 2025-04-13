@@ -1,0 +1,622 @@
+:root {
+    --primary-color: #f39c12;
+    --secondary-color: #28235b;
+    --background-color: #f4f4f4;
+    --text-color: #333;
+    --light-text-color: #666;
+    --white: #fff;
+    --black: #130f40;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    --border-radius: 0.5rem;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Header */
+.header {
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.header .logo i {
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.header .navbar {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.header .navbar a {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: var(--transition);
+    position: relative;
+}
+
+.header .navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    bottom: -5px;
+    left: 0;
+    transition: var(--transition);
+}
+
+.header .navbar a:hover::after {
+    width: 100%;
+}
+
+.header .icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.header .icons div {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.header .icons div:hover {
+    color: var(--primary-color);
+}
+
+.header .search-form {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--white);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.header .search-form.active {
+    display: block;
+}
+/* Footer */
+.footer {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 4rem 0;
+    text-align: center;
+    border-top: 1px solid var(--light-text-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin: 0.5rem 0;
+}
+
+.footer-section ul li a {
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-section ul li a:hover {
+    color: var(--primary-color);
+}
+
+.footer-sectionContact a {
+    margin-top: 15px;
+    padding-top: 15px;
+    color: var(--white);
+    font-size: 1.5rem;
+    transition: var(--transition);
+    gap: 5px;
+}
+
+.footer-sectionContact a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+}
+.logo1 {
+    font-size: 2rem;
+    font-weight: 800;
+    transition: color 0.3s;
+  }
+  .logo1:hover {
+    color: #bbf7d0;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.125rem;
+  }
+  
+  .nav-link {
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+  }
+  
+  .flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+   
+/* Style for the Tajweed Treasures section */
+.section {
+    background-color: var(--white);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 10;
+    width: 100%;
+  }
+  
+  .section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .logo1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .logo1:hover {
+    color: var(--primary-color);
+    transform: scale(1.02);
+  }
+  
+  .logo1::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background: var(--primary-color);
+    bottom: -5px;
+    left: 25%;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .logo1:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+  }
+  
+  .nav-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: var(--primary-color);
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+/* Special style for Tajweed Club link 
+.nav-link[href="#"] {
+    background-color: rgba(243, 156, 18, 0.1);
+    padding: 0.5rem 1.5rem 0.5rem 1rem;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link[href="#"]:hover {
+    background-color: rgba(243, 156, 18, 0.2);
+  }
+  
+  .nav-link[href="#"]::before {
+    content: '\f023';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    margin-right: 0.5rem;
+    font-size: 0.9em;
+  }*/
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .section .container {
+      gap: 1rem;
+    }
+    
+    .logo1 {
+      font-size: 2rem;
+    }
+    
+    .nav {
+      gap: 0.8rem;
+    }
+    
+    .nav-link {
+      font-size: 1rem;
+      padding: 0.3rem 0;
+    }
+    
+    .nav-link[href="#"] {
+      padding: 0.3rem 1rem 0.3rem 0.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nav {
+      gap: 0.5rem;
+    }
+    
+    .nav-link {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Membership Lock Icon 
+  .nav-link[href="#"] {
+    position: relative;
+    padding-right: 25px;
+  }
+  
+  .nav-link[href="#"]::after {
+    content: '\f023';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+  }  */
+/* Worksheets Section - Optimized Card Sizes */
+.intro{
+    background: wheat;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+    margin: 15px;
+}
+.intro h2 {
+    margin: 10px 0;
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+.intro p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+.worksheets-section {
+    padding: 5rem 0 3rem;
+    background-color: var(--white);
+    margin-top: 6rem;
+}
+
+/* Card Grid with Better Proportions */
+.worksheets-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Card with Improved Dimensions */
+.worksheet-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure consistent height */
+}
+
+/* Image Container */
+.card-image {
+    height: 200px; /* Fixed height for images */
+    overflow: hidden;
+    position: relative;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Content Area with More Space */
+.card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.card-description {
+    font-size: 0.95rem;
+    color: var(--light-text-color);
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.card-price {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
+}
+
+.card-button {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    margin-top: 0.8rem;
+    background: var(--primary-color);
+    border: hidden;
+    border-radius: 10px;
+}
+
+/* Hover Effects */
+.worksheet-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.worksheet-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .worksheets-container {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+    
+    .card-image {
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .worksheets-container {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .card-content {
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .worksheets-container {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+    
+    .card-image {
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .worksheets-section {
+        padding: 4rem 0 2rem;
+        margin-top: 5rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-description {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .worksheets-container {
+        padding: 0 1rem;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .worksheets-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-image {
+        height: 200px;
+    }
+    
+    .card-content {
+        padding: 1.2rem;
+    }
+}
+
+/* Loading and Error States */
+.loading-spinner, .error-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.2rem;
+}
+
+.loading-spinner i {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-message i {
+    font-size: 2.5rem;
+    color: #e74c3c;
+    margin-bottom: 1.5rem;
+}
+
+.error-message button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 50px;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.error-message button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Cart Feedback Notification */
+.cart-feedback {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.cart-feedback i {
+    font-size: 1.2rem;
+}
