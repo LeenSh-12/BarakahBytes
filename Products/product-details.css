@@ -29,6 +29,46 @@ body {
     font-weight: bold;
 }
 
+.price {
+    font-size: 1.8rem;
+    color: #a58a44;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+
+  .desc {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .engage-section {
+    display: flex;
+    gap: 20px;
+    margin: 25px 0;
+  }
+
+  .engage-item {
+    flex: 1;
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .engage-item i {
+    font-size: 24px;
+    color: #a58a44;
+    margin-bottom: 8px;
+  }
+
+  .engage-item span {
+    display: block;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
 .product-details {
     display: flex;
     flex-wrap: wrap;
