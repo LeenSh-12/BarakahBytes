@@ -424,6 +424,16 @@ input[type="radio"] {
 }
 
 
+.price-tag {
+  display: block;
+  margin-top: 5px;
+  font-weight: bold;
+  color: #a58a44;
+  font-size: 16px;
+}
+
+
+
 
 .social-icons {
     display: flex;
