@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Mkharij.css">
+    <link rel="stylesheet" href="../Products/cart.css">
+
 </head>
 <body>
          <!-- Header -->
@@ -37,6 +39,19 @@
           </form>
       </div>
   </header>
+
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <span id="closeCart">&times;</span>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <p>Total: <span id="cartTotal">$0</span></p>
+      <button class="checkout-btn" onclick="goToCheckout()">Proceed to Checkout</button>
+    </div>
+  </div>
+  <div id="cartOverlay" class="cart-overlay"></div>
 
     <br>
     <br>
@@ -171,6 +186,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="../Products/cart.js"></script>
    <script src="mkharij.js"></script>
 </body>
 </html>

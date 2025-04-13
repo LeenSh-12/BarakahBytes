@@ -6,6 +6,7 @@
     <title>Hajj & Umrah Booking</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="bookingStyle.css">
+    <link rel="stylesheet" href="../Products/cart.css">
 
 
 </head>
@@ -32,6 +33,19 @@
             </form>
         </div>
     </header>
+
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+          <h2>Your Cart</h2>
+          <span id="closeCart">&times;</span>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-footer">
+          <p>Total: <span id="cartTotal">$0</span></p>
+          <button class="checkout-btn" onclick="goToCheckout()">Proceed to Checkout</button>
+        </div>
+      </div>
+      <div id="cartOverlay" class="cart-overlay"></div>
 
 
         
@@ -135,7 +149,7 @@
 </div>
 
 
-  
+<script src="../Products/cart.js"></script>  
     
     </body>
       

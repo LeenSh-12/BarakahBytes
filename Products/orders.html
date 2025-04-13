@@ -6,6 +6,8 @@
   <title>My Orders - Barakah Bytes</title>
   <link rel="stylesheet" href="products.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="../Products/cart.css">
+  
   <style>
     .orders-container {
       max-width: 900px;
@@ -71,6 +73,19 @@
     </div>
   </header>
 
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <span id="closeCart">&times;</span>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <p>Total: <span id="cartTotal">$0</span></p>
+      <button class="checkout-btn" onclick="goToCheckout()">Proceed to Checkout</button>
+    </div>
+  </div>
+  <div id="cartOverlay" class="cart-overlay"></div>
+
   <div class="orders-container">
     <h2>My Orders</h2>
     <div id="ordersList"></div>
@@ -111,6 +126,7 @@
     </div>
   </footer>
 
+  <script src="../Products/cart.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const orders = JSON.parse(localStorage.getItem("orders")) || [];
