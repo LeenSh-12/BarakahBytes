@@ -151,3 +151,16 @@ function updateAuthUI() {
 // Initialize UI on page load
 document.addEventListener('DOMContentLoaded', updateAuthUI);
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    const dropdownMenu = document.getElementById("dropdown-menu");
+    if (currentUser && dropdownMenu) {
+      const ordersLink = document.createElement("a");
+      ordersLink.href = "/Products/orders.html";
+      ordersLink.className = "dropdown-item";
+      ordersLink.textContent = "My Orders";
+      dropdownMenu.appendChild(ordersLink);
+    }
+  });
