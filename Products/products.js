@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     product.style.display = "block";
                 } else {
                     product.style.display = "none";
-                }
+                }   
             });
         });
     }
