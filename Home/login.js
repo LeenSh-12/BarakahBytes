@@ -47,6 +47,7 @@ if (user) {
     alert('Login successful!');
     // Store current user in session
     localStorage.setItem('currentUser', JSON.stringify(user));
+    window.location.href = "/Home/index.html"
     conta.style.display = 'none';
     // Reset form
     loginForm.reset();
