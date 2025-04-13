@@ -555,6 +555,7 @@ body {
   display: flex;
   gap: 1rem;
   margin: 2rem 0;
+
 }
 
 .option {
@@ -564,11 +565,13 @@ body {
   border-radius: var(--border-radius);
   transition: var(--transition);
   cursor: pointer;
+ 
 }
 
 .option:hover {
   border-color: var(--primary-color);
 }
+
 
 .option.selected {
   border-color: var(--primary-color);
