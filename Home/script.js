@@ -96,12 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
             e.stopPropagation();
         });
     }
-
-
-
-
-
-
+    
     // Logout functionality
 const logoutBtn = document.querySelector('.dropdown-menu .dropdown-item:nth-child(2)');
 
