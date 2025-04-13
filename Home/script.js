@@ -152,6 +152,14 @@ function updateAuthUI() {
 document.addEventListener('DOMContentLoaded', updateAuthUI);
 });
 
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileDrawer = document.getElementById("mobile-drawer");
+
+    menuToggle.addEventListener("click", () => {
+      mobileDrawer.classList.toggle("active");
+    });
+  });
 
 document.addEventListener("DOMContentLoaded", () => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));

@@ -231,3 +231,12 @@ document.addEventListener("DOMContentLoaded", () => {
       dropdownMenu.appendChild(ordersLink);
     }
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileDrawer = document.getElementById("mobile-drawer");
+
+    menuToggle.addEventListener("click", () => {
+      mobileDrawer.classList.toggle("active");
+    });
+  });
