@@ -74,8 +74,8 @@ function updateNights() {
         const option = document.createElement('option');
         option.value = night;
         option.textContent = location === 'both' 
-            ? `${night} Nights (${Math.ceil(night / 2)} Makkah & ${Math.floor(night / 2)} Madinah)`
-            : `${night} Nights (${location})`;
+        ? `${night} Nights (${Math.ceil(night / 2)} Makkah & ${Math.floor(night / 2)} Madinah)`
+        : `${night} Nights (${location})`;
         nightsSelect.appendChild(option);
     });
 }
@@ -88,6 +88,8 @@ function selectPackage(packageType) {
 
     document.getElementById(packageType + 'Card').classList.add('selected');
 }
+
+
 
 // Book now functionality
 function bookNow() {
@@ -112,4 +114,48 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Event listener for location change to update nights
-document.getElementById('location').addEventListener('change', updateNights);
+document.getElementById('location').addEventListener('change', updateNights);  
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const bookNowBtn = document.querySelector('#book-now-btn');
+    const paymentForm = document.querySelector('#payment-form');
+
+    bookNowBtn.addEventListener('click', () => {
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+        if (!currentUser) {
+            alert('Please log in first to book a trip.');
+            const loginModal = document.querySelector('.cont');
+            if (loginModal) loginModal.style.display = 'flex';
+        } else {
+            openPaymentForm();
+            scrollToForm(paymentForm);
+        }
+    });
+
+    // Scroll to payment form smoothly
+    function scrollToForm(form) {
+        form.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Payment submission handler
+    document.querySelector('#credit-card-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Payment successful! Your trip has been booked.');
+        this.reset();
+        closePaymentForm();
+    });
+});
+
+// Open payment popup
+function openPaymentForm() {
+    document.getElementById('payment-form').style.display = 'flex';
+}
+
+// Close payment popup
+function closePaymentForm() {
+    document.getElementById('payment-form').style.display = 'none';
+}
