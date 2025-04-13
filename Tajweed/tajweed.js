@@ -151,4 +151,70 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hide payment form initially
     document.getElementById('paymentForm').style.display = 'none';
 });
+
+
+// Newsletter Form Validation
+const newsletterForm = document.querySelector('#newsletter .form');
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const emailInput = this.querySelector('input[type="email"]');
+        const submitBtn = this.querySelector('.btn');
+        const email = emailInput.value.trim();
+        
+        // Validate email format
+        if (!email) {
+            showNewsletterMessage('Please enter your email address', 'error');
+            return;
+        }
+        
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            showNewsletterMessage('Please enter a valid email address', 'error');
+            return;
+        }
+        
+        // Disable button during submission
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Subscribing...';
+        
+        // Simulate form submission (replace with actual AJAX call)
+        setTimeout(() => {
+            // On success
+            showNewsletterMessage('Thank you for subscribing!', 'success');
+            emailInput.value = '';
+            
+            // Reset button after 2 seconds
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Receive Notification';
+            }, 2000);
+            
+            // Here you would normally send the data to your server
+            console.log('Subscribed email:', email);
+            
+        }, 1000);
+    });
+}
+
+// Helper function to show validation messages
+function showNewsletterMessage(message, type) {
+    // Remove any existing messages first
+    const existingMsg = document.querySelector('.newsletter-message');
+    if (existingMsg) existingMsg.remove();
+    
+    // Create message element
+    const msgElement = document.createElement('p');
+    msgElement.className = `newsletter-message ${type}`;
+    msgElement.textContent = message;
+    
+    // Insert after the form button
+    const form = document.querySelector('#newsletter .form');
+    form.appendChild(msgElement);
+    
+    // Auto-remove after 3 seconds
+    setTimeout(() => {
+        msgElement.remove();
+    }, 3000);
+}
 })
