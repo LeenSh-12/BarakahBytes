@@ -3,62 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us</title>
+  <title>About Us - BarakahBytes</title>
   <link rel="stylesheet" href="aboutUs.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
 <body>
-  <header>
-    <h1>About Us</h1>
-    <p>Meet the minds behind our Hajj & Umrah journey</p>
-  </header>
+  <header class="header">
+    <div class="container">
+        <a href="#" class="logo"><i class="fas fa-shopping-basket"></i> Barakah Bytes</a>
+        <nav class="navbar">
+            <a href="/Home/index.html">Home</a>
+            <a href="/Products/products.html">Products</a>
+            <a href="/Tafsir/tafsir.html">Qur'an</a>
+            <a href="/Tajweed/tajweed.html">Tajweed</a>
+            <a href="/Booking/booking.html">Trips</a>
+        </nav>
+        <div class="icons">
+            <div class="fas fa-search" id="search-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="user-menu-container">
+                <div class="fas fa-user" id="login-btn"></div>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="/Home/login.html" class="dropdown-item">Login</a>
+                    <a href="#" class="dropdown-item">Logout</a>
+                </div>
+            </div>
+        </div>
+        <form class="search-form">
+            <input type="search" id="search-box" placeholder="Search here...">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+    </div>
+</header>
+
 
   <section class="about-content">
     <div class="mission scroll-fade">
+      <h1>About Us</h1>
+     <p>Your all-in-one Islamic digital platform — BarakahBytes</p>
       <h2>Our Mission</h2>
-      <p>We aim to provide the best Hajj and Umrah experience through seamless digital solutions.</p>
+      <p>
+        At BarakahBytes, we strive to enrich the spiritual journey of every Muslim by offering a comprehensive Islamic platform — featuring Quranic Tafsir and Tajwid, essential Islamic products, and trusted Hajj & Umrah booking services.
+      </p>
     </div>
 
     <div class="team scroll-fade">
-        <h2>Meet the Team</h2>
-        <p class="team-intro">We're a passionate team of Computer and Communications Engineering students from Rafic Hariri University, driven by the goal of making Hajj & Umrah planning easier, smarter, and more accessible.</p>
-      
-        <div class="team-members">
-          <div class="member">
-            <img src="leen.jpg" alt="Leen Chehade">
-            <h3>Leen Chehade</h3>
-            <p class="role">UI/UX Designer & Frontend Developer</p>
-          </div>
-      
-          <div class="member">
-            <img src="hussein.jpg" alt="Hussein Mezher">
-            <h3>Hussein Mezher</h3>
-            <p class="role">UI/UX Designer & Frontend Developer</p>
-          </div>
-      
-          <div class="member">
-            <img src="alaa.jpg" alt="Alaa Foani">
-            <h3>Alaa Foani</h3>
-            <p class="role">UI/UX Designer & Frontend Developer</p>
-          </div>
+      <h2>Meet the Team</h2>
+      <p class="team-intro">We're a passionate team of Computer and Communications Engineering students from Rafic Hariri University, dedicated to making Islamic knowledge and services more accessible through intuitive and modern digital experiences.
+      </p>
+
+      <div class="team-members">
+        <div class="member">
+          <img src="Alaa.jpg" alt="Alaa foani">
+          <h3>Alaa Foani</h3>
+          <p class="role">UI/UX Designer & Frontend Developer</p>
+        </div>
+
+        <div class="member">
+          <img src="leen.jpg" alt="Leen chehade">
+          <h3>Leen Chehade</h3>
+          <p class="role">UI/UX Designer & Frontend Developer</p>
+        </div>
+
+        <div class="member">
+          <img src="hussein.jpg" alt="Hussein Mezher">
+          <h3>Hussein Mezher</h3>
+          <p class="role">UI/UX Designer & Frontend Developer</p>
         </div>
       </div>
-      
-
-    <div class="contact scroll-fade">
-      <h2>Contact Us</h2>
-      <form id="contactForm">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
     </div>
+    <div class="goals scroll-fade">
+      <h2>Our Future Goals</h2>
+      <ul class="goals-list">
+        <li>Expand our Islamic product collection with educational and spiritual tools.</li>
+        <li>Develop a mobile app for easier access to Quranic Tafsir and Tajweed lessons.</li>
+        <li>Partner with certified agencies to offer more affordable and customized Hajj & Umrah trips.</li>
+        <li>Launch a blog and newsletter to share Islamic reflections and knowledge weekly.</li>
+      </ul>
+    </div>
+
+   
   </section>
 
-  <footer>
-    <p>&copy; 2025 Hajj & Umrah Services. All rights reserved.</p>
-  </footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>Barakah Bytes</h2>
+                <p>Providing high-quality digital Islamic products to inspire and enrich your faith.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="/Home/index.html">Home</a></li>
+                    <li><a href="/Products/products.html">Products</a></li>
+                    <li><a href="/Tafsir/tafsir.html">Qur'an</a></li>
+                    <li><a href="/Tajweed/tajweed.html">Tajweed</a></li>
+                    <li><a href="/Booking/booking.html">Trips</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p>Email: support@barakahbytes.com</p>
+                <p>Phone: +123 456 7890</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Barakah Bytes. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
 
-  <script src="aboutUs.css"></script>
+
+  <script src="aboutUs.js"></script>
 </body>
 </html>

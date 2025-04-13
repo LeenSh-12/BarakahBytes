@@ -91,6 +91,13 @@
     display: block;
 }
 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
 
 /* General Styles */
 :root {
@@ -140,6 +147,7 @@ h2 {
     animation: fadeIn 2s ease;
 }
 
+
 /* Form Fields */
 .field {
     margin-bottom: 20px;
@@ -148,23 +156,107 @@ h2 {
 }
 
 label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 14px;
-}
+    font-size: 16px;
+    cursor: pointer;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    display: inline-block;
+  }
 
-select {
+  select {
     width: 100%;
-    padding: 8px;
-    font-size: 14px;
-    margin-top: 5px;
-    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    color: #333;
     transition: all 0.3s ease;
-}
+    cursor: pointer;
+  }
+  
+  /* On hover, change the border color */
+  select:hover {
+    border-color: #5cb85c;
+  }
+  
+  /* Style for the dropdown arrow */
+  select:focus {
+    border-color: #5cb85c;
+    outline: none;
+    background-color: #fff;
+  }
+  
+  /* Add some padding and improve readability for the options */
+  select option {
+    padding: 10px;
+  }
+  
 
 input[type="radio"] {
+    width: 20px;
+    height: 20px;
     margin-right: 10px;
+    accent-color: #f39c12; /* Custom accent color for the radio button */
+    cursor: pointer;
+  }
+
+/* The background overlay */
+#payment-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
+
+/* The content of the popup */
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+#payment-popup input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#payment-popup button {
+    background-color: #f39c12;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#payment-popup button:hover {
+    background-color: #e67e22;
+}
+
+#close-popup {
+    margin-top: 10px;
+    background-color: #e74c3c;
+    border: none;
+}
+
+#close-popup:hover {
+    background-color: #c0392b;
+}
+
 
 /* Packages */
 .packages {
@@ -211,22 +303,35 @@ input[type="radio"] {
 .gold { background-color: #FFD700; }
 .platinum { background-color: #E5E4E2; }
 
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #000000;
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button {
+    background: #f39c12;
     color: white;
     font-size: 16px;
+    font-weight: bold;
+    padding: 15px 30px;
     border: none;
+    border-radius: 50px;
     cursor: pointer;
-    border-radius: 4px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #28235b;
-}
+    transition: all 0.3s ease;
+  
+    text-align: center;
+    height: 48px;
+  
+    display: block;
+    margin: 20px auto; /* centers the button horizontally */
+  }
+  
+  button:hover {
+    background:#f39c12;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
 
 /* Animations */
 @keyframes fadeIn {
@@ -275,6 +380,7 @@ button:hover {
     box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.1);
   }
   
+
 
 /* Footer */
 .footer {
@@ -343,3 +449,81 @@ button:hover {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     font-size: 0.9rem;
 }
+
+/* Payment form overlay */
+#payment-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    animation: fadeInOverlay 0.4s ease-in-out;
+  }
+  
+  /* Payment popup */
+  .payment-popup {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: fadeInPopup 0.4s ease-in-out;
+  }
+  
+  /* Close button */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  .close-btn:hover {
+    color: #f39c12;
+  }
+  
+  /* Input fields */
+  .payment-popup input {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  /* Submit button */
+  .payment-popup button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .payment-popup button:hover {
+    background-color: #218838;
+  }
+  
+  /* Animations */
+  @keyframes fadeInOverlay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes fadeInPopup {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  

@@ -1,0 +1,425 @@
+:root {
+  --primary-color: #f39c12;
+  --secondary-color: #28235b;
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --light-text-color: #666;
+  --white: #fff;
+  --black: #130f40;
+  --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --border-radius: 0.5rem;
+  --transition: all 0.3s ease;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Header */
+.header {
+  background: var(--white);
+  box-shadow: var(--box-shadow);
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header .logo i {
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+.header .navbar {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.header .navbar a {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: var(--transition);
+  position: relative;
+}
+
+.header .navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  bottom: -5px;
+  left: 0;
+  transition: var(--transition);
+}
+
+.header .navbar a:hover::after {
+  width: 100%;
+}
+
+.header .icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.header .icons div {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.header .icons div:hover {
+  color: var(--primary-color);
+}
+
+.header .search-form {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--white);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.header .search-form.active {
+  display: block;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.about-content {
+  padding-top: 120px; 
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.about-content h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.about-content p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+.about-content h2 {
+  font-size: 32px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+.team-intro {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.member h3 {
+  font-size: 22px;
+}
+
+.member .role {
+  font-size: 18px;
+}
+
+.contact h2 {
+  font-size: 32px;
+}
+
+#contactForm input,
+#contactForm textarea {
+  font-size: 18px;
+}
+.mission, .team, .contact {
+  margin-bottom: 3rem;
+}
+
+.team-members {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.member {
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 200px;
+  transition: transform 0.3s ease;
+}
+
+.member:hover {
+  transform: translateY(-5px);
+}
+
+.member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.goals {
+  background: #fff;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 3rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.goals h2 {
+  font-size: 32px;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.goals-list {
+  list-style-type: disc;
+  padding-left: 2rem;
+  font-size: 18px;
+  color: var(--text-color);
+  text-align: left;
+  line-height: 1.7;
+}
+
+
+  
+ /* Footer */
+.footer {
+  background: var(--secondary-color);
+  color: var(--white);
+  padding: 4rem 0;
+  text-align: center;
+  border-top: 1px solid var(--light-text-color);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin: 0.5rem 0;
+}
+
+.footer-section ul li a {
+  color: var(--white);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-section ul li a:hover {
+  color: var(--primary-color);
+}
+
+.footer-sectionContact a {
+  margin-top: 15px;
+  padding-top: 15px;
+  color: var(--white);
+  font-size: 1.5rem;
+  transition: var(--transition);
+  gap: 5px;
+}
+
+.footer-sectionContact a:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .product-container {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-container {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .product-container {
+      grid-template-columns: 1fr;
+  }
+}
+
+.goals {
+  background: #fff;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 3rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.goals h2 {
+  font-size: 32px;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.goals-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 18px;
+  color: var(--text-color);
+  line-height: 1.8;
+}
+
+.goals-list li {
+  display: flex;
+  align-items: start;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.goals-list li i {
+  color: var(--primary-color);
+  font-size: 20px;
+  margin-top: 0.3rem;
+}
+
+.goals-list li:hover {
+  transform: translateX(5px);
+  color: var(--primary-color);
+}
+/* General Styling for Text Elements */
+
+
+p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease; /* Smooth transition for hover animation */
+}
+
+/* About Us Section */
+.mission p {
+  font-size: 20px; /* Larger text in mission statement */
+  margin-bottom: 2rem;
+}
+
+
+/* Hover Animation for About Us Text */
+.mission p:hover {
+  transform: translateX(10px); /* Slide to the right on hover */
+  color: var(--primary-color);
+}
+
+/* Meet the Team Section */
+.team-intro {
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+
+.team-intro:hover {
+  transform: translateX(10px); /* Slide to the right on hover */
+  color: var(--primary-color);
+}
+
+.team-members h3 {
+  font-size: 24px;
+  color: var(--secondary-color);
+  transition: transform 0.3s ease;
+}
+
+
+
+/* Hover Animation for Team Members */
+.team-members h3:hover {
+  transform: scale(1.1); /* Scale up the name when hovered */
+  color: var(--primary-color);
+}
+
+.team-members .role {
+  font-size: 16px;
+  color: var(--primary-color);
+  transition: transform 0.3s ease;
+}
+
+/* Hover Animation for Roles */
+.team-members .role:hover {
+  transform: translateY(3px); /* Move the role text slightly down */
+  color: var(--secondary-color);
+}
+
+/* Add fade-in effect to the text sections */
+.scroll-fade {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.5s;
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
