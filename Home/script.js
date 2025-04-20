@@ -97,78 +97,142 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
     
-    // Logout functionality
-const logoutBtn = document.querySelector('.dropdown-menu .dropdown-item:nth-child(2)');
-
-if (logoutBtn) {
-    logoutBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        // Check if user is actually logged in
+    // Update UI based on login status
+    function updateAuthUI() {
         const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        if (!currentUser) {
-            alert('No user is currently logged in');
-            return;
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        
+        if (!dropdownMenu) return;
+
+        // Clear existing menu items
+        dropdownMenu.innerHTML = '';
+
+        if (currentUser) {
+            // User is logged in - show Logout, Change User, and My Orders
+            dropdownMenu.innerHTML = `
+                <a href="#" class="dropdown-item change-user-item">Change User</a>
+                <a href="#" class="dropdown-item logout-item">Logout</a>
+                <a href="/Products/orders.html" class="dropdown-item orders-item">My Orders</a>
+            `;
+            
+            // Add logout functionality
+            document.querySelector('.logout-item')?.addEventListener('click', function(e) {
+                e.preventDefault();
+                const confirmLogout = confirm('Are you sure you want to logout?');
+                if (confirmLogout) {
+                    localStorage.removeItem('currentUser');
+                    updateAuthUI();
+                    alert('You have been logged out successfully');
+                    location.reload();
+                }
+            });
+            
+            // Add change user functionality
+            document.querySelector('.change-user-item')?.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.location.href = "/Home/login.html";
+            });
+        } else {
+            // User is logged out - show Login only
+            dropdownMenu.innerHTML = `
+                <a href="/Home/login.html" class="dropdown-item login-item">Login</a>
+            `;
         }
-
-        // Confirmation dialog
-        const confirmLogout = confirm('Are you sure you want to logout?');
-        if (confirmLogout) {
-            // Remove user data from localStorage
-            localStorage.removeItem('currentUser');
-            
-            // Optional: Remove other user-related data if needed
-            // localStorage.removeItem('userCart');
-            // localStorage.removeItem('userPreferences');
-            
-            // Close the dropdown
-            dropdownMenu.classList.remove('show');
-            
-            // Optional: Refresh the page or update UI
-            alert('You have been logged out successfully');
-            location.reload(); // Remove this line if you don't want page refresh
-        }
-    });
-}
-
-// Update UI based on login status
-function updateAuthUI() {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    const loginItem = document.querySelector('.dropdown-menu .dropdown-item:nth-child(1)');
-    const logoutItem = document.querySelector('.dropdown-menu .dropdown-item:nth-child(2)');
-
-    if (currentUser) {
-        // User is logged in
-        if (loginItem) loginItem.style.display = 'none';
-        if (logoutItem) logoutItem.style.display = 'block';
-    } else {
-        // User is logged out
-        if (loginItem) loginItem.style.display = 'block';
-        if (logoutItem) logoutItem.style.display = 'none';
     }
-}
 
-// Initialize UI on page load
-document.addEventListener('DOMContentLoaded', updateAuthUI);
-});
+    // Initialize UI on page load
+    updateAuthUI();
 
-  document.addEventListener("DOMContentLoaded", () => {
+    // Mobile menu toggle
     const menuToggle = document.getElementById("menu-toggle");
     const mobileDrawer = document.getElementById("mobile-drawer");
 
-    menuToggle.addEventListener("click", () => {
-      mobileDrawer.classList.toggle("active");
-    });
-  });
-
-document.addEventListener("DOMContentLoaded", () => {
-    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    const dropdownMenu = document.getElementById("dropdown-menu");
-    if (currentUser && dropdownMenu) {
-      const ordersLink = document.createElement("a");
-      ordersLink.href = "/Products/orders.html";
-      ordersLink.className = "dropdown-item";
-      ordersLink.textContent = "My Orders";
-      dropdownMenu.appendChild(ordersLink);
+    if (menuToggle && mobileDrawer) {
+        menuToggle.addEventListener("click", () => {
+            mobileDrawer.classList.toggle("active");
+        });
     }
-  });
+
+    // Product details functionality
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get("id");
+
+    if (productId) {
+        fetch("products.json")
+            .then(res => res.json())
+            .then(products => {
+                const product = products.find(p => p.id === productId);
+                const container = document.getElementById("product-details");
+
+                if (product) {
+                    container.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="info">
+                            <h1>${product.name}</h1>
+                            <p class="price">${product.price}</p>
+                            <p class="desc">${product.description}</p>
+
+                            <div class="engage-section">
+                                <div class="engage-item">
+                                    <i class="fas fa-shipping-fast"></i>
+                                    <span>Free Delivery</span>
+                                </div>
+                                <div class="engage-item">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>Trusted Quality</span>
+                                </div>
+                                <div class="engage-item">
+                                    <i class="fas fa-hand-holding-heart"></i>
+                                    <span>Spiritual Gift</span>
+                                </div>
+                            </div>
+
+                            <button class="buy-btn">Add to Cart</button>
+                        </div>
+                    `;
+
+                    document.querySelector(".buy-btn")?.addEventListener("click", () => {
+                        addToCart({
+                            id: product.id,
+                            name: product.name,
+                            price: product.price,
+                            image: product.image
+                        });
+                    });
+
+                    const recommended = products.filter(p => p.id !== product.id && p.category === product.category).slice(0, 3);
+                    if (recommended.length > 0) {
+                        document.getElementById("recommended-section").style.display = "block";
+                        const list = document.getElementById("recommended-list");
+                        recommended.forEach(p => {
+                            const card = document.createElement("div");
+                            card.className = "recommended-product";
+                            card.innerHTML = `
+                                <img src="${p.image}" alt="${p.name}">
+                                <h3>${p.name}</h3>
+                                <p>${p.price}</p>
+                            `;
+                            card.addEventListener("click", () => {
+                                window.location.href = `product-details.html?id=${p.id}`;
+                            });
+                            list.appendChild(card);
+                        });
+                    }
+                } else {
+                    container.innerHTML = "<p>Product not found.</p>";
+                }
+            });
+    }
+
+    function addToCart(product) {
+        let cart = JSON.parse(localStorage.getItem("cart-items")) || [];
+        const exists = cart.find(item => item.id === product.id);
+        if (exists) {
+            exists.quantity++;
+        } else {
+            cart.push({ ...product, quantity: 1 });
+        }
+        localStorage.setItem("cart-items", JSON.stringify(cart));
+        alert("Product added to cart!");
+    }
+});
