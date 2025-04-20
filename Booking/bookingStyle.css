@@ -304,7 +304,7 @@ input[type="radio"] {
     height: 48px;
   
     display: block;
-    margin: 20px auto; /* centers the button horizontally */
+    margin: 20px 0 20px 30%;
   }
   
   button:hover {
@@ -360,7 +360,31 @@ input[type="radio"] {
     box-shadow: 0 0 0 3px rgba(243, 156, 18, 0.1);
   }
   
-
+  .booking-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .form-fields {
+    flex: 1;
+    min-width: 280px;
+    max-width: 400px;
+    text-align: left;
+  }
+  
+  .packages {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .card {
+    width: 30%;
+  }
 
 /* Footer */
 .footer {
@@ -515,7 +539,6 @@ input[type="radio"] {
   /* Submit button */
   .payment-popup button {
     width: 100%;
-    margin-top: 20px;
     padding: 12px;
     font-size: 16px;
     background-color: #28a745;
@@ -523,6 +546,8 @@ input[type="radio"] {
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    margin: 20px auto; /* centers the button horizontally */
+ 
   }
   .payment-popup button:hover {
     background-color: #218838;
@@ -537,4 +562,43 @@ input[type="radio"] {
     from { opacity: 0; transform: scale(0.95); }
     to { opacity: 1; transform: scale(1); }
   }
+  .booking-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
   
+  .left-side {
+    flex: 3;
+    min-width: 280px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .field {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .right-side {
+    flex: 5;
+    min-width: 500px;
+  }
+  
+  .packages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.8rem;
+  }
+
+  @media (max-width: 768px) {
+    .booking-layout {
+      flex-direction: column;
+    }
+  
+    .packages {
+      justify-content: center;
+    }
+  }
