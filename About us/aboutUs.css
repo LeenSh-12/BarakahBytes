@@ -44,10 +44,13 @@
   gap: 0.5rem;
 }
 
-.header .logo i {
+.header .logo .logoImg {
   color: var(--primary-color);
   font-size: 2rem;
+  height: 80px;
+
 }
+
 
 .header .navbar {
   display: flex;
