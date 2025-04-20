@@ -80,71 +80,80 @@
 <br>
 
         
-        <div class="container">
-            <h2>Hajj & Umrah Booking</h2>
-        
-            <div class="field">
-                <label><input type="radio" name="pilgrimage" id="umrah" checked> Umrah</label>
-                <label><input type="radio" name="pilgrimage" id="hajj"> Hajj</label>
-            </div>
+<div class="container">
+  <h2>Hajj & Umrah Booking</h2>
 
-           
-        
-            <div class="field">
-                <label for="year">Select Year:</label>
-                <select id="year"></select>
-            </div>
-            
-            <div class="field" id="monthField">
-                <label for="month">Select Month:</label>
-                <select id="month"></select>
-            </div>
-        
-            <div class="field" id="packageField">
-                <label>Select Package:</label>
-                <div class="packages">
-                    <div class="card" onclick="selectPackage('silver')" id="silverCard">
-                        <div class="card-header silver"></div>
-                        <img src="../images/Booking-imgs/silver package.jpg" alt="Silver Package">
-                        <p>Silver (3-Star)</p>
-                        <span class="price-tag">$1200</span>
-                        <small>Stay in Emaar Al Noor (Makkah) or Nusuk Al Madinah (Madinah). Includes food & transport.</small>
-                    </div>
-                    <div class="card" onclick="selectPackage('gold')" id="goldCard">
-                        <div class="card-header gold"></div>
-                        <img src="../images/Booking-imgs/Gold package.jpg" alt="Gold Package">
-                        <p>Gold (4-Star)</p>
-                        <span class="price-tag">$2000</span>
-                        <small>Enjoy 4-star hotels like Elaf Bakkah Hotel (Makkah) or Elaf Al Taqwa Hotel (Madinah). Meals & services included.</small>
-                    </div>
-                    <div class="card" onclick="selectPackage('platinum')" id="platinumCard">
-                        <div class="card-header platinum"></div>
-                        <img src="../images/Booking-imgs/platinum-package.png" alt="Platinum Package">
-                        <p>Platinum (5-Star)</p>
-                        <span class="price-tag">$3500</span>
-                        <small>Luxury stay in Fairmont Makkah Clock Royal Tower (Makkah): Located within the Abraj Al Bait complex or Intercontinental Dar Al Hijra Ic (Madinah). Full board, VIP transport & guide included.</small>
-                    </div>
-                </div>
-            </div>
-        
-            <div id="locationField" class="field">
-                <label for="location">Select Location:</label>
-                <select id="location">
-                    <option value="makkah">Makkah</option>
-                    <option value="madinah">Madinah</option>
-                    <option value="both">Makkah & Madinah</option>
-                </select>
-            </div>
-        
-            <div id="nightsField" class="field">
-                <label for="nights">Select Nights:</label>
-                <select id="nights"></select>
-            </div>
-        
+  <div class="booking-layout">
+    <div class="left-side">
+      <div class="field">
+        <label><input type="radio" name="pilgrimage" id="umrah" checked> Umrah</label>
+        <label><input type="radio" name="pilgrimage" id="hajj"> Hajj</label>
+      </div>
+
+      <div class="field">
+        <label for="year">Select Year:</label>
+        <select id="year"></select>
+      </div>
+
+      <div class="field" id="monthField">
+        <label for="month">Select Month:</label>
+        <select id="month"></select>
+      </div>
+
+      <div id="locationField" class="field">
+        <label for="location">Select Location:</label>
+        <select id="location">
+          <option value="makkah">Makkah</option>
+          <option value="madinah">Madinah</option>
+          <option value="both">Makkah & Madinah</option>
+        </select>
+      </div>
+
+      <div id="nightsField" class="field">
+        <label for="nights">Select Nights:</label>
+        <select id="nights"></select>
+      </div>
+    </div>
+
+    <div class="right-side">
+      <div class="field" id="packageField">
+        <label>Select Package:</label>
+        <div class="packages">
+          <!-- Your existing package cards here -->
+          <!-- Silver Package -->
+          <div class="card" onclick="selectPackage('silver')" id="silverCard">
+            <div class="card-header silver"></div>
+            <img src="../images/Booking-imgs/silver package.jpg" alt="Silver Package">
+            <p>Silver (3-Star)</p>
+            <span class="price-tag">$1200</span>
+            <small>Stay in Emaar Al Noor (Makkah) or Nusuk Al Madinah (Madinah). Includes food & transport.</small>
+          </div>
+
+          <!-- Gold Package -->
+          <div class="card" onclick="selectPackage('gold')" id="goldCard">
+            <div class="card-header gold"></div>
+            <img src="../images/Booking-imgs/Gold package.jpg" alt="Gold Package">
+            <p>Gold (4-Star)</p>
+            <span class="price-tag">$2000</span>
+            <small>Enjoy 4-star hotels like Elaf Bakkah Hotel (Makkah) or Elaf Al Taqwa Hotel (Madinah). Meals & services included.</small>
+          </div>
+
+          <!-- Platinum Package -->
+          <div class="card" onclick="selectPackage('platinum')" id="platinumCard">
+            <div class="card-header platinum"></div>
+            <img src="../images/Booking-imgs/platinum-package.png" alt="Platinum Package">
+            <p>Platinum (5-Star)</p>
+            <span class="price-tag">$3500</span>
+            <small>Luxury stay in Fairmont Makkah Clock Royal Tower (Makkah): Located within the Abraj Al Bait complex or Intercontinental Dar Al Hijra Ic (Madinah). Full board, VIP transport & guide included.</small>
+          </div>
         </div>
-       
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-       
+      
 
 
         <script src="bookingScript.js"></script>
@@ -165,23 +174,39 @@
     <span class="close-btn" onclick="closePaymentForm()">×</span>
     <h2>Payment Details</h2>
     <form id="credit-card-form">
-      <label for="card-name">Name on Card:</label>
-      <input type="text" id="card-name" required>
-
-      <label for="card-number">Card Number:</label>
-      <input type="text" id="card-number" required pattern="\d{16}" maxlength="16">
-
-      <label for="expiry">Expiry Date:</label>
-      <input type="text" id="expiry" required placeholder="MM/YY" pattern="\d{2}/\d{2}">
-
-      <label for="cvv">CVV:</label>
-      <input type="text" id="cvv" required pattern="\d{3}" maxlength="3">
-
-      <button type="submit">Pay Now</button>
+      <input 
+        type="text" 
+        id="card-number" 
+        placeholder="Card Number" 
+        required 
+        pattern="\d{16}" 
+        maxlength="16">
+    
+      <input 
+        type="text" 
+        id="expiry" 
+        placeholder="Expiration Date (MM/YY)" 
+        required 
+        pattern="\d{2}/\d{2}">
+    
+      <input 
+        type="text" 
+        id="cvv" 
+        placeholder="CVV" 
+        required 
+        pattern="\d{3}" 
+        maxlength="3">
+    
+      <input 
+        type="text" 
+        id="card-name" 
+        placeholder="Name on Card" 
+        required>
+    
+      <button type="submit" class="btn">Pay Now</button>
     </form>
   </div>
 </div>
-
 
 <script src="../Products/cart.js"></script>  
 <script src="../script.js"></script>
