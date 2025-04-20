@@ -47,6 +47,16 @@ body {
     margin-top: 60px; /* Adjust for fixed header */
 }
 
+.hero .container{
+    background-color: rgba(241, 232, 232, 0.5); 
+    color: var(--black);
+    padding: 20px;
+    display: inline-block; 
+    border-radius: 5px;
+    width: 500px; 
+    height: 300px; 
+}
+
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
@@ -99,8 +109,6 @@ body {
     margin: 15px;
  
 }
-
-
 .carousel::-webkit-scrollbar-thumb {
     background-color: var(--primary-color);
     border-radius: 10px;
