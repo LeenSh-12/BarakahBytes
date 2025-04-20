@@ -226,6 +226,7 @@ body {
     padding: 5rem 1rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+   margin: 15px;
   }
   
   .hero-title {
@@ -250,6 +251,7 @@ body {
   /* Section */
   .section {
     padding: 4rem 1rem;
+   
   }
   
   .section-title {
@@ -273,6 +275,7 @@ body {
     border-radius: 1rem;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     transition: transform 0.3s, box-shadow 0.3s;
+    margin: 15px;
   }
   
   .card:hover {
@@ -343,6 +346,7 @@ body {
     background:wheat;
     border-radius: 0.5rem;
     transition: background 0.3s;
+    margin: 15px;
   }
   
 
