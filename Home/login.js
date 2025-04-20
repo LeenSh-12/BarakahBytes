@@ -7,14 +7,13 @@ const closeBtn = document.querySelectorAll('.close-btn');
 const loginForm = document.querySelector('.form-box.login');
 const registerForm = document.querySelector('.form-box.register');
 
-
-
 // Close button functionality
 closeBtn.forEach(btn => {
     btn.addEventListener('click', () => {
         conta.style.display = 'none';
     });
 });
+
 // Toggle between login and register forms
 registerBTN.addEventListener('click', () => {
     conta.classList.add('active');
@@ -40,20 +39,21 @@ loginForm.addEventListener('submit', (e) => {
         alert('Please fill in all fields');
         return;
     }
-// Check if user exists
-const user = users.find(u => u.username === loginUsername.value && u.password === loginPassword.value);
     
-if (user) {
-    alert('Login successful!');
-    // Store current user in session
-    localStorage.setItem('currentUser', JSON.stringify(user));
-    window.location.href = "/Home/index.html"
-    conta.style.display = 'none';
-    // Reset form
-    loginForm.reset();
-} else {
-    alert('Invalid username or password');
-}
+    // Check if user exists
+    const user = users.find(u => u.username === loginUsername.value && u.password === loginPassword.value);
+        
+    if (user) {
+        alert('Login successful!');
+        // Store current user in session
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        window.location.href = "/Home/index.html";
+        conta.style.display = 'none';
+        // Reset form
+        loginForm.reset();
+    } else {
+        alert('Invalid username or password');
+    }
 });
 
 // Register form elements
@@ -64,8 +64,8 @@ const regSubmitBtn = registerForm.querySelector('.BTN');
 
 // Email validation function
 function isValidEmail(email) {
-const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-return re.test(email);
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
 }
 
 // Register form validation and submission
@@ -90,31 +90,31 @@ registerForm.addEventListener('submit', (e) => {
         alert('Username or email already exists');
         return;
     }
-// Create new user
-const newUser = {
-    username: regUsername.value,
-    email: regEmail.value,
-    password: regPassword.value
-};
+    
+    // Create new user
+    const newUser = {
+        username: regUsername.value,
+        email: regEmail.value,
+        password: regPassword.value
+    };
 
-users.push(newUser);
-localStorage.setItem('users', JSON.stringify(users));
+    users.push(newUser);
+    localStorage.setItem('users', JSON.stringify(users));
 
-alert('Registration successful! You can now login.');
-conta.classList.remove('active');
-registerForm.reset();
+    alert('Registration successful! You can now login.');
+    conta.classList.remove('active');
+    registerForm.reset();
 });
 
 // Check if user is already logged in on page load
 window.addEventListener('DOMContentLoaded', () => {
-const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-if (currentUser) {
-    // User is logged in, you could update UI here
-    console.log('User is logged in:', currentUser.username);
-}
-
-
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser) {
+        // User is logged in, you could update UI here
+        console.log('User is logged in:', currentUser.username);
+    }
 });
+
 // Disable register button if form is invalid
 function validateRegisterForm() {
     const isEmailValid = isValidEmail(regEmail.value);
@@ -131,35 +131,34 @@ regPassword.addEventListener('input', validateRegisterForm);
 // Initial validation
 validateRegisterForm();
 
- // Login dropdown functionality
- const loginBtn = document.getElementById('login-btn');
- const dropdownMenu = document.getElementById('dropdown-menu');
+// Login dropdown functionality
+const loginBtn = document.getElementById('login-btn');
+const dropdownMenu = document.querySelector('.dropdown-menu');
 
- if (loginBtn && dropdownMenu) {
-     loginBtn.addEventListener('click', function(e) {
-         e.stopPropagation();
-         dropdownMenu.classList.toggle('show');
-     });
+if (loginBtn && dropdownMenu) {
+    loginBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdownMenu.classList.toggle('show');
+    });
 
-     // Close dropdown when clicking anywhere else
-     window.addEventListener('click', function() {
-         dropdownMenu.classList.remove('show');
-     });
+    // Close dropdown when clicking anywhere else
+    window.addEventListener('click', function() {
+        if (dropdownMenu.classList.contains('show')) {
+            dropdownMenu.classList.remove('show');
+        }
+    });
 
-     // Prevent dropdown from closing when clicking inside it
-     dropdownMenu.addEventListener('click', function(e) {
-         e.stopPropagation();
-     });
- }
+    // Prevent dropdown from closing when clicking inside it
+    dropdownMenu.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+}
 
-
- // Logout functionality
+// Logout functionality
 const logoutBtn = document.querySelector('.dropdown-menu .dropdown-item:nth-child(2)');
-
 if (logoutBtn) {
     logoutBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        
         // Check if user is actually logged in
         const currentUser = JSON.parse(localStorage.getItem('currentUser'));
         if (!currentUser) {
@@ -172,7 +171,6 @@ if (logoutBtn) {
         if (confirmLogout) {
             // Remove user data from localStorage
             localStorage.removeItem('currentUser');
-            
             // Optional: Remove other user-related data if needed
             // localStorage.removeItem('userCart');
             // localStorage.removeItem('userPreferences');
@@ -192,7 +190,7 @@ function updateAuthUI() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     const loginItem = document.querySelector('.dropdown-menu .dropdown-item:nth-child(1)');
     const logoutItem = document.querySelector('.dropdown-menu .dropdown-item:nth-child(2)');
-
+    
     if (currentUser) {
         // User is logged in
         if (loginItem) loginItem.style.display = 'none';
