@@ -118,7 +118,7 @@ body {
     height: 8px;
 }
 
-    .product {
+ .product {
         width: 300px; /* Fixed width (same as reviews) */
         height: 300px; /* Equal to width for a square shape */
         background: var(--white);
@@ -135,7 +135,7 @@ body {
         margin: 15px;
         flex: 0 0 auto; /* Prevents shrinking (same as reviews) */
         overflow: hidden; /* Ensures content stays inside the box */
-    }
+ }
     
 
 
